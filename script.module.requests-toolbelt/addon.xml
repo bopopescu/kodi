@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="script.module.requests-toolbelt"
+       name="requests-toolbelt"
+       version="0.9.1"
+       provider-name="Ian Cordasco, Cory Benfield (graffatcolmingov@gmail.com)">
+  <requires>
+    <import addon="xbmc.python" version="2.7.0"/>
+	<import addon="script.module.requests" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.module" library="lib" />
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">Requests toolbet</summary>
+    <description lang="en_GB">A handy Python module with utilites for the Requests module.</description>
+    <license>MIT</license>
+    <platform>all</platform>
+    <website>https://toolbelt.readthedocs.org/</website>
+    <assets>
+      <icon>icon.png</icon>
+    </assets>
+  </extension>
+</addon>

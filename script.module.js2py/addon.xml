@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<addon id="script.module.js2py" name="js2py" provider-name="Piotr Dabkowski" version="7.0.0">
+  <requires>
+    <import addon="xbmc.python" version="2.14.0" />
+	<import addon="script.module.six" version="1.11.0" />
+	<import addon="script.module.pyjsparser" version="2.7.1" />
+	<import addon="script.module.tzlocal" version="1.5.1"/>
+  </requires>
+  <extension library="lib" point="xbmc.python.module" />
+  <extension point="xbmc.addon.metadata">
+        <summary lang="en">js2py+pyjsparser module</summary>
+        <description lan="en">Pure Python JavaScript Translator/Interpreter</description>
+        <license>MIT</license>
+        <platform>all</platform>
+        <email></email>
+        <website>http://piter.io/projects/js2py</website>
+        <forum></forum>
+        <source>https://github.com/PiotrDabkowski/Js2Py</source>
+        <language></language>
+		<news>09/03/2020 - Bugfix by ostvanc in version 6.03.0: removed local library "pyjsparser" due to parsing errors </news>
+   </extension>
+</addon>
