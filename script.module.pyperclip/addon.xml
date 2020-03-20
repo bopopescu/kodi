@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="script.module.pyperclip"
+       name="pyperclip"
+       version="1.7.0"
+       provider-name="asweigart">
+  <requires>
+    <import addon="xbmc.python" version="2.7.0"/>
+  </requires>
+  <extension point="xbmc.python.module" library="src" />
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">Python clipboard library</summary>
+    <description lang="en_GB">The purpose of Pyperclip is to provide a cross-platform Python module for copying and pasting text to the clipboard.</description>
+    <license>MIT</license>
+    <platform>all</platform>
+    <website>https://pyperclip.readthedocs.io/en/latest/index.html</website>
+    <assets>
+      <icon>icon.png</icon>
+    </assets>
+  </extension>
+</addon>
