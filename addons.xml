@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<addons>
+  <addon id="plugin.video.4anime" version="0.3.0" name="4Anime.to" provider-name="ostvanc"> 
+    <requires> 
+      <import addon="xbmc.python" version="2.25.0"/>  
+      <import addon="script.module.beautifulsoup4" version="4.5.3"/>  
+      <import addon="script.module.cloudscraper" version="1.2.23"/>  
+      <import addon="script.module.js2py" version="6.02.2"/>  
+      <import addon="script.module.pyperclip" version="1.7.0"/>  
+      <import addon="script.module.requests" version="2.22.0"/> 
+    </requires>  
+    <extension point="xbmc.python.pluginsource" library="main.py"> 
+      <provides>video</provides> 
+    </extension>  
+    <extension point="xbmc.addon.metadata"> 
+      <summary lang="en">4Anime Video Addon</summary>  
+      <description lang="en_GB">Kodi video plugin for the website 4Anime.to</description>  
+      <disclaimer lang="en_GB">https://4anime.to</disclaimer>  
+      <assets> 
+        <icon>icon.png</icon>  
+        <fanart>fanart.jpg</fanart>  
+        <screenshot>resources\screenshots\screenshot-01.jpg</screenshot>  
+        <screenshot>resources\screenshots\screenshot-02.jpg</screenshot>  
+        <screenshot>resources\screenshots\screenshot-03.jpg</screenshot> 
+      </assets>  
+      <news>0.0.1 - 01/12/2019 - Initial version - added random tv show 0.0.2 - 03/12/2019 - added search tv show 0.1.0 - 04/12/2019 - added Cloudfare protection 0.2.0 - 08/03/2020 - added JS Evaluation 0.3.0 - 18/03/2020 - added search by genre</news> 
+    </extension> 
+  </addon>
+  <addon id="plugin.video.bild" version="0.3.0" name="Bild.de" provider-name="ostvanc"> 
+    <requires> 
+      <import addon="xbmc.python" version="2.25.0"/>  
+      <import addon="script.module.beautifulsoup4" version="4.5.3"/> 
+    </requires>  
+    <extension point="xbmc.python.pluginsource" library="main.py"> 
+      <provides>video</provides> 
+    </extension>  
+    <extension point="xbmc.addon.metadata"> 
+      <summary lang="en">Bild.de Video Addon</summary>  
+      <description lang="en_GB">Kodi video plugin for the website Bild.de</description>  
+      <disclaimer lang="en_GB">https://www.bild.de/video</disclaimer>  
+      <assets> 
+        <icon>icon.png</icon>  
+        <fanart>fanart.jpg</fanart>  
+        <screenshot>resources\screenshot000.png</screenshot>  
+        <screenshot>resources\screenshot001.png</screenshot>  
+        <screenshot>resources\screenshot002.png</screenshot> 
+      </assets>  
+      <news>0.1.0 - 12/02/2020 - Initial version 0.2.0 - 06/03/2020 - Fixed due to changes 0.3.0 - 09/03/2020 - Added Livestream</news> 
+    </extension> 
+  </addon>
+  <addon id="plugin.video.rivedila7" name="La7-La7d" version="4.2.0" provider-name="Luivit, Testato"> 
+    <requires> 
+      <import addon="xbmc.python" version="2.26.0"/>  
+      <import addon="script.module.requests"/>  
+      <import addon="script.module.inputstreamhelper"/>  
+      <import addon="script.module.beautifulsoup4" version="4.5.3"/>  
+      <import addon="script.module.html5lib" version="0.999.0"/> 
+    </requires>  
+    <extension point="xbmc.python.pluginsource" library="addon.py"> 
+      <provides>video</provides> 
+    </extension>  
+    <extension point="xbmc.addon.metadata"> 
+      <summary lang="en_GB">LA7-LA7d</summary>  
+      <description lang="en_GB">Live Streaming, Replay the last week, On-Demand programs, News and Weather, Teche LA7 - The Protagonists</description>  
+      <summary lang="it_IT">LA7-LA7d</summary>  
+      <description lang="it_IT">Diretta Live, Rivedi ultima settimana, Programmi On-Demand, Telegiornali e Meteo, Teche LA7 - I Protagonisti</description>  
+      <language>it</language>  
+      <platform>all</platform>  
+      <license>GNU General Public License v3.0</license>  
+      <forum>https://forum.kodi.tv/showthread.php?tid=331064</forum>  
+      <website>http://www.la7.it</website>  
+      <email>luivit39@gmail.com</email>  
+      <source>https://github.com/luivit/plugin.video.rivedila7</source>  
+      <assets> 
+        <icon>resources/icon.png</icon>  
+        <fanart>resources/fanart.jpg</fanart> 
+      </assets>  
+      <news>4.2.0 (2020-02-08) - Fixed Week video scraping for On-Demand - Fixed episodes thumbnail - Moved some program to Landpage scraping</news> 
+    </extension> 
+  </addon>
+  <addon id="plugin.video.tvrepublika" version="0.2.0" name="Telewizja Republika" provider-name="ostvanc"> 
+    <requires> 
+      <import addon="xbmc.python" version="2.25.0"/>  
+      <import addon="script.module.beautifulsoup4" version="4.5.3"/>  
+      <import addon="plugin.video.youtube" version="6.5.2"/> 
+    </requires>  
+    <extension point="xbmc.python.pluginsource" library="main.py"> 
+      <provides>video</provides> 
+    </extension>  
+    <extension point="xbmc.addon.metadata"> 
+      <summary lang="en">Telewizja Republika</summary>  
+      <description lang="en_GB">Kodi video plugin for the Polish TV channel "Telewizja Republika".</description>  
+      <disclaimer lang="en_GB">https://telewizjarepublika.pl</disclaimer>  
+      <assets> 
+        <icon>icon.png</icon>  
+        <fanart>fanart.jpg</fanart>  
+        <screenshot>resources\screenshot-01.jpg</screenshot> 
+      </assets>  
+      <news>0.0.1 - 21/11/2019 - Initial version - added TV Livestream 0.1.0 - 23/11/2019 - added Videos and Magazines 0.1.1 - 24/11/2019 - added 'Magazyn wojskowy' and 'Zawod zolnierz' 0.1.2 - 26/11/2019 - workaround for certificate erros 0.2.0 - 01/12/2019 - refactoring due to complete youtube video hosting by TVR</news> 
+    </extension> 
+  </addon>
+  <addon id="repository.ostvanc" name="ostvanc Repository" version="1.0.0" provider-name="ostvanc"> 
+    <extension point="xbmc.addon.repository" name="ostvanc Repository"> 
+      <dir> 
+        <info compressed="false">https://github.com/ostvanc/kodi/addons.xml</info>  
+        <checksum>https://github.com/ostvanc/kodi/addons.xml.md5</checksum>  
+        <datadir zip="true">https://github.com/ostvanc/kodi</datadir> 
+      </dir> 
+    </extension>  
+    <extension point="xbmc.addon.metadata"> 
+      <summary lang="en">ostvanc Kodi addon repository</summary>  
+      <description lang="en">A Kodi addon repository including 4Anime.to, Bild.de and TelewizjaRepublika.pl</description>  
+      <platform>all</platform>  
+      <genre/> 
+    </extension> 
+  </addon>
+  <addon id="script.module.cloudscraper" name="cloudscraper" version="1.2.26" provider-name="VeNoMouS (venom@gen-x.co.nz)"> 
+    <requires> 
+      <import addon="xbmc.python" version="2.7.0"/>  
+      <import addon="script.module.requests" version="2.9.2"/> 
+    </requires>  
+    <extension point="xbmc.python.module" library="lib"/>  
+    <extension point="xbmc.addon.metadata"> 
+      <summary lang="en_GB">Screen-scraping library</summary>  
+      <description lang="en_GB">A simple Python module to bypass Cloudflare's anti-bot page (also known as "I'm Under Attack Mode", or IUAM), implemented with Requests.</description>  
+      <license>MIT</license>  
+      <platform>all</platform>  
+      <website>https://github.com/venomous/cloudscraper</website>  
+      <assets> 
+        <icon>icon.png</icon> 
+      </assets> 
+    </extension> 
+  </addon>
+  <addon id="script.module.js2py" name="js2py" provider-name="Piotr Dabkowski" version="7.0.0"> 
+    <requires> 
+      <import addon="xbmc.python" version="2.14.0"/>  
+      <import addon="script.module.six" version="1.11.0"/>  
+      <import addon="script.module.pyjsparser" version="2.7.1"/>  
+      <import addon="script.module.tzlocal" version="1.5.1"/> 
+    </requires>  
+    <extension library="lib" point="xbmc.python.module"/>  
+    <extension point="xbmc.addon.metadata"> 
+      <summary lang="en">js2py+pyjsparser module</summary>  
+      <description lan="en">Pure Python JavaScript Translator/Interpreter</description>  
+      <license>MIT</license>  
+      <platform>all</platform>  
+      <email/>  
+      <website>http://piter.io/projects/js2py</website>  
+      <forum/>  
+      <source>https://github.com/PiotrDabkowski/Js2Py</source>  
+      <language/>  
+      <news>09/03/2020 - Bugfix by ostvanc in version 6.03.0: removed local library "pyjsparser" due to parsing errors</news> 
+    </extension> 
+  </addon>
+  <addon id="script.module.pyjsparser" name="pyjsparser" version="2.7.2" provider-name="Addons4Kodi"> 
+    <requires> 
+      <import addon="xbmc.python" version="2.25.0"/> 
+    </requires>  
+    <extension point="xbmc.python.module" library="lib"/>  
+    <extension point="xbmc.addon.metadata"> 
+      <summary>Pure Python JavaScript Translator/Interpreter</summary>  
+      <description>Packed for Kodi from https://github.com/PiotrDabkowski/pyjsparser</description>  
+      <platform>all</platform>  
+      <language/>  
+      <license>MIT</license>  
+      <forum/>  
+      <website>https://github.com/PiotrDabkowski/pyjsparser</website>  
+      <source>https://github.com/PiotrDabkowski/pyjsparser</source>  
+      <email/> 
+    </extension> 
+  </addon>
+  <addon id="script.module.pyperclip" name="pyperclip" version="1.7.0" provider-name="asweigart"> 
+    <requires> 
+      <import addon="xbmc.python" version="2.7.0"/> 
+    </requires>  
+    <extension point="xbmc.python.module" library="src"/>  
+    <extension point="xbmc.addon.metadata"> 
+      <summary lang="en_GB">Python clipboard library</summary>  
+      <description lang="en_GB">The purpose of Pyperclip is to provide a cross-platform Python module for copying and pasting text to the clipboard.</description>  
+      <license>MIT</license>  
+      <platform>all</platform>  
+      <website>https://pyperclip.readthedocs.io/en/latest/index.html</website>  
+      <assets> 
+        <icon>icon.png</icon> 
+      </assets> 
+    </extension> 
+  </addon>
+  <addon id="script.module.pytz" name="pytz" version="2019.3.0" provider-name="Stuart Bishop, Paul Backhouse"> 
+    <requires> 
+      <import addon="xbmc.python" version="3.0.0"/> 
+    </requires>  
+    <extension point="xbmc.python.module" library="lib"/>  
+    <extension point="xbmc.addon.metadata"> 
+      <summary lang="en_GB">World Timezone Definitions for Python.</summary>  
+      <description lang="en_GB">pytz brings the Olson tz database into Python. This library allows accurate and cross platform timezone calculations using Python 2.4 or higher. It also solves the issue of ambiguous times at the end of daylight saving time, which you can read more about in the Python Library Reference (datetime.tzinfo).</description>  
+      <platform>all</platform>  
+      <language/>  
+      <license>MIT</license>  
+      <forum/>  
+      <website>https://pythonhosted.org/pytz/</website>  
+      <source>https://github.com/stub42/pytz</source>  
+      <email/> 
+    </extension> 
+  </addon>
+  <addon id="script.module.requests-toolbelt" name="requests-toolbelt" version="0.9.1" provider-name="Ian Cordasco, Cory Benfield (graffatcolmingov@gmail.com)"> 
+    <requires> 
+      <import addon="xbmc.python" version="2.7.0"/>  
+      <import addon="script.module.requests" version="2.1.0"/> 
+    </requires>  
+    <extension point="xbmc.python.module" library="lib"/>  
+    <extension point="xbmc.addon.metadata"> 
+      <summary lang="en_GB">Requests toolbet</summary>  
+      <description lang="en_GB">A handy Python module with utilites for the Requests module.</description>  
+      <license>MIT</license>  
+      <platform>all</platform>  
+      <website>https://toolbelt.readthedocs.org/</website>  
+      <assets> 
+        <icon>icon.png</icon> 
+      </assets> 
+    </extension> 
+  </addon>
+  <addon id="script.module.six" name="six" version="1.9.0" provider-name="gutworth"> 
+    <requires> 
+      <import addon="xbmc.python" version="2.1.0"/> 
+    </requires>  
+    <extension point="xbmc.python.module" library="lib"/>  
+    <extension point="xbmc.addon.metadata"> 
+      <summary>Python 2 and 3 compatibility utilities.</summary>  
+      <description>Six is a Python 2 and 3 compatibility library. It provides utility functions for smoothing over the differences between the Python versions with the goal of writing Python code that is compatible on both Python versions. See the documentation for more information on what is provided.</description>  
+      <platform>all</platform>  
+      <license>MIT</license>  
+      <source>https://pypi.python.org/pypi/six</source>  
+      <website>https://pypi.python.org/pypi/six</website> 
+    </extension> 
+  </addon>
+  <addon id="script.module.tzlocal" name="tzlocal" version="1.5.2" provider-name="Addons4Kodi"> 
+    <requires> 
+      <import addon="xbmc.python" version="2.25.0"/>  
+      <import addon="script.module.pytz" version="2014.2"/> 
+    </requires>  
+    <extension point="xbmc.python.module" library="lib"/>  
+    <extension point="xbmc.addon.metadata"> 
+      <summary>Python Module to find out the current time zone</summary>  
+      <description>Packed for Kodi from https://github.com/regebro/tzlocal</description>  
+      <platform>all</platform>  
+      <language/>  
+      <license>MIT</license>  
+      <forum/>  
+      <website>https://github.com/regebro/tzlocal</website>  
+      <source>https://github.com/regebro/tzlocal</source>  
+      <email/> 
+    </extension> 
+  </addon>
+</addons>

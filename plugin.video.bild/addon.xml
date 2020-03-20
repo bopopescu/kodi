@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="plugin.video.bild"
+version="0.3.0"
+name="Bild.de"
+provider-name="ostvanc">
+<requires>
+  <import addon="xbmc.python" version="2.25.0"/>
+  <import addon="script.module.beautifulsoup4" version="4.5.3"/>
+</requires>
+<extension point="xbmc.python.pluginsource" library="main.py">
+  <provides>video</provides>
+</extension>
+<extension point="xbmc.addon.metadata">
+  <summary lang="en">Bild.de Video Addon</summary>
+  <description lang="en_GB">Kodi video plugin for the website Bild.de</description>
+  <disclaimer lang="en_GB">https://www.bild.de/video</disclaimer>
+  <assets>
+    <icon>icon.png</icon>
+    <fanart>fanart.jpg</fanart>
+	<screenshot>resources\screenshot000.png</screenshot>
+    <screenshot>resources\screenshot001.png</screenshot>
+	<screenshot>resources\screenshot002.png</screenshot>
+  </assets>
+  <news>
+	0.1.0 - 12/02/2020 - Initial version
+	0.2.0 - 06/03/2020 - Fixed due to changes
+	0.3.0 - 09/03/2020 - Added Livestream
+  </news>
+</extension>
+</addon>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="plugin.video.tvrepublika"
+version="0.2.0"
+name="Telewizja Republika"
+provider-name="ostvanc">
+<requires>
+  <import addon="xbmc.python" version="2.25.0"/>
+  <import addon="script.module.beautifulsoup4" version="4.5.3"/>
+  <import addon="plugin.video.youtube" version="6.5.2"/>
+</requires>
+<extension point="xbmc.python.pluginsource" library="main.py">
+  <provides>video</provides>
+</extension>
+<extension point="xbmc.addon.metadata">
+  <summary lang="en">Telewizja Republika</summary>
+  <description lang="en_GB">Kodi video plugin for the Polish TV channel "Telewizja Republika".</description>
+  <disclaimer lang="en_GB">https://telewizjarepublika.pl</disclaimer>
+  <assets>
+    <icon>icon.png</icon>
+    <fanart>fanart.jpg</fanart>
+    <screenshot>resources\screenshot-01.jpg</screenshot>
+  </assets>
+  <news>
+	0.0.1 - 21/11/2019 - Initial version - added TV Livestream 
+	0.1.0 - 23/11/2019 - added Videos and Magazines
+	0.1.1 - 24/11/2019 - added 'Magazyn wojskowy' and 'Zawod zolnierz'
+	0.1.2 - 26/11/2019 - workaround for certificate erros
+	0.2.0 - 01/12/2019 - refactoring due to complete youtube video hosting by TVR
+  </news>
+</extension>
+</addon>
