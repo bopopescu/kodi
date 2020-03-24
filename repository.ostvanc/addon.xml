@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="repository.ostvanc" name="ostvanc Repository" version="1.0.1" provider-name="ostvanc">
+<addon id="repository.ostvanc" name="ostvanc addon repository" version="1.0.2" provider-name="ostvanc">
 	<extension point="xbmc.addon.repository" name="ostvanc Repository">
 		<info compressed="false">https://github.com/ostvanc/kodi/raw/master/addons.xml</info>
 		<checksum>https://github.com/ostvanc/kodi/raw/master/addons.xml.md5</checksum>
 		<datadir zip="true">https://github.com/ostvanc/kodi/raw/master</datadir>
 	</extension>
 	<extension point="xbmc.addon.metadata">
-		<summary lang="en">ostvanc Kodi addon repository</summary>
+		<summary lang="en">ostvanc addon repository</summary>
 		<description lang="en">A Kodi addon repository including 4Anime.to, Bild.de and Telewizja Republika</description>
 		<platform>all</platform>
 		<news>1.0.1  (24-03-2020)
 			- Added the Polish TV addons, namely TVP.pl (by mbebe), WP Pilot and TVP SPORT (by cod34fun).
+			1.0.2  (24-03-2020)
+			- Added the Italian TV addons, namely Rai Play (by Nightflyer, cttynul, maxbambi, fabpolli) and Mediaset Play (by kodi-bino, cttynul).
 		</news>
 	</extension>
 </addon>
