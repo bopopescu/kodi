@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+	<category label="Logowanie premium">
+		<setting id="username"  type="text" label="Login" default="" />
+		<setting id="password"  type="text" label="Hasło" option="hidden"  default="" />
+		<setting id="logowanie" type="bool" label="Logowanie w serwisie" default="false" enable=/>
+	</category>
+	<category label="Ustawienia Proxy">
+		<setting id="proxyG" type="bool" label="Użyj alternatywnego proxy" default="false" enable=/>
+		<setting type="sep" />
+		<setting id="protocol" type="labelenum" label="Protokół"  values="None|http|https" default="None"/>
+		<setting id="ipaddress" type="ipaddress" label="Adres IP" default="0.0.0.0" />
+		<setting id="ipport" type="number" label="Port" default="0"/>
+		<setting id="timeout" type="number" label="Timeout (s)" default="10"/>
+		<setting id="set" value="on" />
+	</category>
+	<category label="Video">
+		<setting id="quality" type="enum" label="jakość video" values="Ręcznie|Najlepsza|1080p (BR=91000)|720p (BR=54000)|560p High (BR=28500)|560p Low (BR=17500)|480p (BR=12500)" default="0" />
+	</category>
+	<category label="Inputstream">
+		<setting label="Inputstream Adaptive" type="bool" id="inputstream" default="false"/>
+	</category>	
+</settings>

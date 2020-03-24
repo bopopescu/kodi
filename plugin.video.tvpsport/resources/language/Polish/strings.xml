@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<strings>
+    <string id="32000">Odtwarzanie</string>
+    <string id="32001">Zaawansowane</string>
+    <string id="32011">Preferowana jakość</string>
+    <string id="32021">Inputstream Adaptive</string>
+    <string id="32110">Auto</string>
+    <string id="32111">1920x1080 (3800000)</string>
+    <string id="32112">1280x720 (2800000)</string>
+    <string id="32113">1024x576 (2100000)</string>
+    <string id="32114">720x404 (1700000)</string>
+    <string id="32115">512x288 (1200000)</string>
+    <string id="32116">512x288 (700000)</string>
+    <string id="32117">512x288 (400000)</string>
+</strings>

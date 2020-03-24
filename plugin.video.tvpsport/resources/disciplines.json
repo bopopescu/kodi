@@ -1,0 +1,644 @@
+{
+   "19226713": {
+      "name": "FIFA Mistrzostwa Świata ",
+      "icon": "./app/public/images/IconDyscipline/puchar.png",
+      "sport_id": 1,
+      "active_tab": "none",
+      "score": {
+         "tt_id": 77
+      },
+      "subcategory": {
+         "36746556": {
+            "name": "Rosja",
+            "video_id": 36835179,
+            "score": {
+               "tt_id": 77
+            }
+         },
+         "36746598": {
+            "name": "Urugwaj",
+            "video_id": 36835190,
+            "score": {
+               "tt_id": 77
+            }
+         },
+         "36746614": {
+            "name": "Egipt",
+            "video_id": 36788089,
+            "score": {
+               "tt_id": 77
+            }
+         },
+         "36746617": {
+            "name": "Arabia Saudyjska",
+            "video_id": 36932175,
+            "score": {
+               "tt_id": 77
+            }
+         },
+         "36746786": {
+            "name": "Portugalia",
+            "video_id": 36822134,
+            "score": {
+               "tt_id": 77
+            }
+         },
+         "36746783": {
+            "name": "Hiszpania",
+            "video_id": 36771729,
+            "score": {
+               "tt_id": 77
+            }
+         },
+         "36746772": {
+            "name": "Maroko",
+            "video_id": 36774420,
+            "score": {
+               "tt_id": 77
+            }
+         },
+         "36746770": {
+            "name": "Iran",
+            "video_id": 36790926,
+            "score": {
+               "tt_id": 77
+            }
+         },
+         "36746758": {
+            "name": "Francja",
+            "video_id": 36807908,
+            "score": {
+               "tt_id": 77
+            }
+         },
+         "36746738": {
+            "name": "Dania",
+            "video_id": 36806677,
+            "score": {
+               "tt_id": 77
+            }
+         },
+         "36746736": {
+            "name": "Peru",
+            "video_id": 36807875,
+            "score": {
+               "tt_id": 77
+            }
+         },
+         "36746733": {
+            "name": "Australia",
+            "video_id": 36773009,
+            "score": {
+               "tt_id": 77
+            }
+         },
+         "36746719": {
+            "name": "Chorwacja",
+            "video_id": 36791134,
+            "score": {
+               "tt_id": 77
+            }
+         },
+         "36746717": {
+            "name": "Islandia",
+            "video_id": 36832219,
+            "score": {
+               "tt_id": 77
+            }
+         },
+         "36746711": {
+            "name": "Argentyna",
+            "video_id": 36791402,
+            "score": {
+               "tt_id": 77
+            }
+         },
+         "36746699": {
+            "name": "Nigeria",
+            "video_id": 36787010,
+            "score": {
+               "tt_id": 77
+            }
+         },
+         "36746691": {
+            "name": "Szwajcaria",
+            "video_id": 36819552,
+            "score": {
+               "tt_id": 77
+            }
+         },
+         "36746687": {
+            "name": "Serbia",
+            "video_id": 36822169,
+            "score": {
+               "tt_id": 77
+            }
+         },
+         "36746668": {
+            "name": "Brazylia",
+            "video_id": 36788446,
+            "score": {
+               "tt_id": 77
+            }
+         },
+         "36746667": {
+            "name": "Kostaryka",
+            "video_id": 36787047,
+            "score": {
+               "tt_id": 77
+            }
+         },
+         "36746657": {
+            "name": "Szwecja",
+            "video_id": 36806703,
+            "score": {
+               "tt_id": 77
+            }
+         },
+         "36746655": {
+            "name": "Niemcy",
+            "video_id": 36932678,
+            "score": {
+               "tt_id": 77
+            }
+         },
+         "36746653": {
+            "name": "Meksyk",
+            "video_id": 36788541,
+            "score": {
+               "tt_id": 77
+            }
+         },
+         "36746652": {
+            "name": "Korea Południowa",
+            "video_id": 36832223,
+            "score": {
+               "tt_id": 77
+            }
+         },
+         "36746649": {
+            "name": "Belgia",
+            "video_id": 36932711,
+            "score": {
+               "tt_id": 77
+            }
+         },
+         "36746640": {
+            "name": "Anglia",
+            "video_id": 36819543,
+            "score": {
+               "tt_id": 77
+            }
+         },
+         "36746638": {
+            "name": "Tunezja",
+            "video_id": 36772962,
+            "score": {
+               "tt_id": 77
+            }
+         },
+         "36746637": {
+            "name": "Panama",
+            "video_id": 36788108,
+            "score": {
+               "tt_id": 77
+            }
+         },
+         "36746628": {
+            "name": "Polska",
+            "video_id": 36772032,
+            "score": {
+               "tt_id": 77
+            }
+         },
+         "36746627": {
+            "name": "Kolumbia",
+            "video_id": 36791472,
+            "score": {
+               "tt_id": 77
+            }
+         },
+         "36746626": {
+            "name": "Senegal",
+            "video_id": 36932111,
+            "score": {
+               "tt_id": 77
+            }
+         },
+         "36746624": {
+            "name": "Japonia",
+            "video_id": 36772044,
+            "score": {
+               "tt_id": 77
+            }
+         },
+         "624876": {
+            "name": "Reprezentacja",
+            "score": {
+               "tt_id": 77
+            }
+         }
+      }
+   },
+   "436230": {
+      "name": "Piłka nożna",
+      "title": "",
+      "icon": "./app/public/images/IconDyscipline/nozna.png",
+      "sport_id": 1,
+      "active_tab": "lineup",
+      "subcategory": {
+         "624876": {
+            "name": "Reprezentacja",
+            "score": {
+               "tt_id": 77
+            }
+         },
+         "19226713": {
+            "name": "Mundial 2018",
+            "score": {
+               "tt_id": 77
+            }
+         },
+         "436434": {
+            "name": "Liga Mistrzów",
+            "score": {
+               "tt_id": 42
+            }
+         },
+         "436417": {
+            "name": "Liga Europejska",
+            "score": {
+               "tt_id": 73
+            }
+         },
+         "436246": {
+            "name": "Ekstraklasa",
+            "score": {
+               "tt_id": 196
+            }
+         },
+         "436419": {
+            "name": "Anglia",
+            "score": {
+               "tt_id": 47
+            }
+         },
+         "436421": {
+            "name": "Niemcy",
+            "score": {
+               "tt_id": 54
+            }
+         },
+         "436423": {
+            "name": "Włochy",
+            "score": {
+               "tt_id": 55
+            }
+         },
+         "462349": {
+            "name": "Hiszpania",
+            "score": {
+               "tt_id": 87
+            }
+         },
+         "462350": {
+            "name": "Francja",
+            "score": {
+               "tt_id": 53
+            }
+         },
+         "27040528": {
+            "name": "Futsal"
+         },
+         "750095": {
+            "name": "I liga",
+            "score": {
+               "tt_id": 197
+            }
+         },
+         "436416": {
+            "name": "Puchar Polski",
+            "score": {
+               "tt_id": 198
+            }
+         },
+         "16850343": {
+            "name": "Szkolenie młodzieży"
+         }
+      }
+   },
+   "436306": {
+      "name": "Tenis",
+      "title": "",
+      "icon": "./app/public/images/IconDyscipline/tenis.png",
+      "sport_id": 2,
+      "active_tab": "info",
+      "subcategory": {
+         "21185018": {
+            "name": "Wielki Szlem",
+            "score": {
+               "tt_id": 153
+            }
+         },
+         "21185017": {
+            "name": "ATP (mężczyźni)",
+            "score": {
+               "tt_id": 156
+            }
+         },
+         "21185016": {
+            "name": "WTA (kobiety)",
+            "score": {
+               "tt_id": 152
+            }
+         }
+      }
+   },
+   "436312": {
+      "name": "HOKEJ NA LODZIE",
+      "title": "",
+      "icon": "./app/public/images/IconDyscipline/hokej.png",
+      "sport_id": 5,
+      "active_tab": "lineup",
+      "subcategory": {
+         "925304": {
+            "name": "Polska Hokej Liga",
+            "score": {
+               "tt_id": 9383
+            }
+         },
+         "479715": {
+            "name": "Reprezentacja"
+         },
+         "479717": {
+            "name": "NHL",
+            "score": {
+               "tt_id": 24
+            }
+         }
+      }
+   },
+   "609277": {
+      "name": "BIEGI NARCIARSKIE",
+      "title": "",
+      "icon": "./app/public/images/IconDyscipline/bieginarciarskie.png",
+      "sport_id": 9,
+      "active_tab": "stats",
+      "subcategory": {}
+   },
+   "609531": {
+      "name": "SKOKI NARCIARSKIE",
+      "title": "",
+      "icon": "./app/public/images/IconDyscipline/skoki.png",
+      "sport_id": 17,
+      "active_tab": "stats",
+      "subcategory": {}
+   },
+   "609282": {
+      "name": "ŁYŻWIARSTWO SZYBKIE",
+      "title": "",
+      "icon": "./app/public/images/IconDyscipline/lyzwiarstwoszybkie.png",
+      "sport_id": 19,
+      "active_tab": "stats",
+      "subcategory": {}
+   },
+   "436301": {
+      "name": "PIŁKA RĘCZNA",
+      "title": "",
+      "icon": "./app/public/images/IconDyscipline/pilkareczna.png",
+      "sport_id": 20,
+      "active_tab": "lineup",
+      "subcategory": {
+         "479713": {
+            "name": "Reprezentacja mężczyzn",
+            "score": {
+               "tt_id": 388
+            }
+         },
+         "658557": {
+            "name": "Reprezentacja kobiet",
+            "score": {
+               "tt_id": 363
+            }
+         },
+         "479710": {
+            "name": "PGNiG Superliga (M)",
+            "score": {
+               "tt_id": 9036
+            }
+         },
+         "479709": {
+            "name": "PGNiG Superliga (K)",
+            "score": {
+               "tt_id": 9037
+            }
+         },
+         "1030554": {
+            "name": "Puchary",
+            "score": {
+               "tt_id": 349
+            }
+         }
+      }
+   },
+   "536353": {
+      "name": "SPORTY MOTOROWE",
+      "title": "",
+      "icon": "./app/public/images/IconDyscipline/moto.png",
+      "active_tab": "stats",
+      "subcategory": {
+         "28217027": {
+            "name": "Rajd Dakar"
+         },
+         "479661": {
+            "name": "Formuła 1"
+         },
+         "609259": {
+            "name": "Rajdy samochodowe"
+         },
+         "609260": {
+            "name": "Motocykle"
+         },
+         "7839548": {
+            "name": "Kia Lotos Race"
+         }
+      }
+   },
+   "436313": {
+      "name": "KOSZYKÓWKA",
+      "title": "",
+      "icon": "./app/public/images/IconDyscipline/koszykowka.png",
+      "sport_id": 23,
+      "active_tab": "lineup",
+      "subcategory": {
+         "2096437": {
+            "name": "Reprezentacja mężczyzn",
+            "score": {
+               "tt_id": 410
+            }
+         },
+         "962259": {
+            "name": "Basket Liga",
+            "score": {
+               "tt_id": 8937
+            }
+         },
+         "7609027": {
+            "name": "Reprezentacja kobiet"
+         },
+         "462450": {
+            "name": "Basket Liga Kobiet"
+         },
+         "462453": {
+            "name": "Puchary"
+         },
+         "462451": {
+            "name": "NBA",
+            "score": {
+               "tt_id": 390
+            }
+         }
+      }
+   },
+   "436299": {
+      "name": "SIATKÓWKA",
+      "title": "",
+      "icon": "./app/public/images/IconDyscipline/siatkowka.png",
+      "sport_id": 51,
+      "active_tab": "info",
+      "subcategory": {
+         "479698": {
+            "name": "Reprezentacja mężczyzn",
+            "score": {
+               "tt_id": 9175
+            }
+         },
+         "649184": {
+            "name": "Reprezentacja kobiet",
+            "score": {
+               "tt_id": 9393
+            }
+         },
+         "479704": {
+            "name": "Liga mężczyzn",
+            "score": {
+               "tt_id": 8936
+            }
+         },
+         "479702": {
+            "name": "Liga kobiet",
+            "score": {
+               "tt_id": 9399
+            }
+         },
+         "479701": {
+            "name": "Puchary",
+            "score": {
+               "tt_id": 0
+            }
+         },
+         "11388519": {
+            "name": "Siatkówka plażowa"
+         }
+      }
+   },
+   "436310": {
+      "name": "ŻUŻEL",
+      "title": "",
+      "icon": "./app/public/images/IconDyscipline/zuzel.png",
+      "sport_id": 76,
+      "active_tab": "stats",
+      "subcategory": {
+         "540856": {
+            "name": "Ekstraliga",
+            "score": {
+               "tt_id": 9396
+            }
+         },
+         "14714587": {
+            "name": "Nice Polska Liga Żużlowa"
+         },
+         "479650": {
+            "name": "Grand Prix",
+            "score": {
+               "tt_id": 9226
+            }
+         },
+         "479651": {
+            "name": "Drużynowy Puchar Świata",
+            "score": {
+               "tt_id": 9225
+            }
+         }
+      }
+   },
+   "609218": {
+      "name": "KOLARSTWO",
+      "title": "",
+      "icon": "./app/public/images/IconDyscipline/kolarstwo.png",
+      "active_tab": "none",
+      "subcategory": {
+         "627405": {
+            "name": "Kolarstwo torowe"
+         },
+         "625464": {
+            "name": "Kolarstwo szosowe"
+         },
+         "614573": {
+            "name": "Kolarstwo górskie"
+         }
+      }
+   },
+   "609220": {
+      "name": "LEKKOATLETYKA",
+      "title": "",
+      "icon": "./app/public/images/IconDyscipline/lekkoatletyka.png",
+      "active_tab": "none",
+      "subcategory": {}
+   },
+   "609311": {
+      "name": "PŁYWANIE",
+      "title": "",
+      "icon": "./app/public/images/IconDyscipline/plywanie.png",
+      "active_tab": "none",
+      "subcategory": {}
+   },
+   "609248": {
+      "name": "SPORT NIEPEŁNOSPRAWNYCH",
+      "title": "",
+      "icon": "./app/public/images/IconDyscipline/parasport.png",
+      "subcategory": {},
+      "active_tab": "none"
+   },
+   "609245": {
+      "name": "BOKS",
+      "title": "",
+      "icon": "./app/public/images/IconDyscipline/boks.png",
+      "active_tab": "none",
+      "subcategory": {}
+   },
+   "29387042": {
+      "name": "E-SPORT",
+      "title": "",
+      "icon": "./app/public/images/IconDyscipline/esport.png",
+      "sport_id": 79,
+      "active_tab": "none",
+      "subcategory": {}
+   },
+   "35368522": {
+      "name": "Biathlon",
+      "title": "",
+      "icon": "./app/public/images/IconDyscipline/biathlon.png",
+      "sport_id": 7,
+      "active_tab": "none",
+      "subcategory": {}
+   },
+   "35368502": {
+      "name": "Narciarstwo alpejskie",
+      "title": "",
+      "icon": "./app/public/images/IconDyscipline/narciarstwoalpejskie.png",
+      "sport_id": 6,
+      "active_tab": "none",
+      "subcategory": {}
+   }
+}

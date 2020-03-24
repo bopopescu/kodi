@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+	<category label="32000">
+        <setting label="32011" type="enum" id="quality" lvalues="32110|32111|32112|32113|32114|32115|32116|32117" default="32110"/>
+	</category>
+	<category label="32001">
+        <setting label="32021" type="bool" id="inputstream" default="false"/>
+	</category>
+</settings>

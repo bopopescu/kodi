@@ -49,6 +49,31 @@
       <news>0.1.0 - 12/02/2020 - Initial version 0.2.0 - 06/03/2020 - Fixed due to changes 0.3.0 - 09/03/2020 - Added Livestream</news> 
     </extension> 
   </addon>
+  <addon id="plugin.video.pilot.wp" name="WP Pilot" version="0.1.2" provider-name="c0d34fun"> 
+    <requires> 
+      <import addon="xbmc.python" version="2.25.0"/>  
+      <import addon="script.module.requests" version="2.12.4"/>  
+      <import addon="script.module.inputstreamhelper" version="0.3.3"/>  
+      <import addon="service.cronxbmc" optional="true"/> 
+    </requires>  
+    <extension point="xbmc.python.pluginsource" library="addon.py"> 
+      <provides>video</provides> 
+    </extension>  
+    <extension point="xbmc.addon.metadata"> 
+      <description lang="pl">Ogl?daj WP Pilot w Kodi!</description>  
+      <disclaimer lang="pl">This is not an official plugin! If the official application is available for your platform, use it instead of this plugin. All rights to the content are reserved by wp.pl.</disclaimer>  
+      <summary lang="en">Watch WP Pilot in Kodi!</summary>  
+      <description lang="en">Watch WP Pilot in Kodi!</description>  
+      <disclaimer lang="en">This is not an official plugin! If the official application is available for your platform, use it instead of this plugin. All rights to the content are reserved by wp.pl.</disclaimer>  
+      <language>pl</language>  
+      <platform>all</platform>  
+      <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>  
+      <website>https://pilot.wp.pl</website>  
+      <assets> 
+        <icon>resources/icon.png</icon> 
+      </assets> 
+    </extension> 
+  </addon>
   <addon id="plugin.video.rivedila7" name="La7-La7d" version="4.2.0" provider-name="Luivit, Testato"> 
     <requires> 
       <import addon="xbmc.python" version="2.26.0"/>  
@@ -79,6 +104,61 @@
       <news>4.2.0 (2020-02-08) - Fixed Week video scraping for On-Demand - Fixed episodes thumbnail - Moved some program to Landpage scraping</news> 
     </extension> 
   </addon>
+  <addon id="plugin.video.TVP.pl" name="TVP.pl" version="2.2.3" provider-name="mbebe"> 
+    <requires> 
+      <import addon="xbmc.python" version="2.1.0"/>  
+      <import addon="script.module.inputstreamhelper" version="0.3.3"/>  
+      <import addon="script.module.requests"/> 
+    </requires>  
+    <extension point="xbmc.python.pluginsource" library="addon.py"> 
+      <provides>video</provides> 
+    </extension>  
+    <extension point="xbmc.addon.metadata"> 
+      <summary lang="en">Zasoby serwisu tvp.pl oraz vod.tvp.pl</summary>  
+      <description lang="en">Zasoby serwisu tvp.pl oraz vod.tvp.pl</description>  
+      <disclaimer lang="en">A private use only.</disclaimer>  
+      <language>pl</language>  
+      <platform>all</platform>  
+      <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>  
+      <forum/>  
+      <website/>  
+      <email/>  
+      <assets> 
+        <icon>icon.png</icon>  
+        <fanart>fanart.jpg</fanart> 
+      </assets> 
+    </extension> 
+  </addon>
+  <addon id="plugin.video.tvpsport" name="TVP SPORT" version="0.0.8" provider-name="c0d34fun"> 
+    <requires> 
+      <import addon="xbmc.python" version="2.25.0"/>  
+      <import addon="script.module.requests" version="2.12.4"/>  
+      <import addon="script.module.inputstreamhelper" version="0.3.3"/>  
+      <import addon="script.module.m3u8" version="0.2.10"/> 
+    </requires>  
+    <extension point="xbmc.python.pluginsource" library="addon.py"> 
+      <provides>video</provides> 
+    </extension>  
+    <extension point="xbmc.addon.metadata"> 
+      <description lang="en">Watch TVP SPORT in Kodi!</description>  
+      <disclaimer lang="en">This is not an official plugin! If the official application is available for your platform, use it instead of this plugin. All rights to the content are reserved by ©2018 TELEWIZJA POLSKA S.A.</disclaimer>  
+      <summary lang="en">TVP SPORT</summary>  
+      <description lang="en">Watch TVP SPORT in Kodi!</description>  
+      <disclaimer lang="en">This is not an official plugin! If the official application is available for your platform, use it instead of this plugin. All rights to the content are reserved by ©2018 TELEWIZJA POLSKA S.A.</disclaimer>  
+      <language>pl</language>  
+      <platform>all</platform>  
+      <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>  
+      <website>https://sport.tvp.pl</website>  
+      <assets> 
+        <icon>resources/icon.png</icon>  
+        <fanart>resources/fanart.jpg</fanart>  
+        <screenshot>resources/screen01.jpg</screenshot>  
+        <screenshot>resources/screen02.jpg</screenshot>  
+        <screenshot>resources/screen03.jpg</screenshot>  
+        <screenshot>resources/screen04.jpg</screenshot> 
+      </assets> 
+    </extension> 
+  </addon>
   <addon id="plugin.video.tvrepublika" version="0.2.0" name="Telewizja Republika" provider-name="ostvanc"> 
     <requires> 
       <import addon="xbmc.python" version="2.25.0"/>  
@@ -100,7 +180,7 @@
       <news>0.0.1 - 21/11/2019 - Initial version - added TV Livestream 0.1.0 - 23/11/2019 - added Videos and Magazines 0.1.1 - 24/11/2019 - added 'Magazyn wojskowy' and 'Zawod zolnierz' 0.1.2 - 26/11/2019 - workaround for certificate erros 0.2.0 - 01/12/2019 - refactoring due to complete youtube video hosting by TVR</news> 
     </extension> 
   </addon>
-  <addon id="repository.ostvanc" name="ostvanc Repository" version="1.0.0" provider-name="ostvanc"> 
+  <addon id="repository.ostvanc" name="ostvanc Repository" version="1.0.1" provider-name="ostvanc"> 
     <extension point="xbmc.addon.repository" name="ostvanc Repository"> 
       <info compressed="false">https://github.com/ostvanc/kodi/raw/master/addons.xml</info>  
       <checksum>https://github.com/ostvanc/kodi/raw/master/addons.xml.md5</checksum>  
@@ -108,9 +188,9 @@
     </extension>  
     <extension point="xbmc.addon.metadata"> 
       <summary lang="en">ostvanc Kodi addon repository</summary>  
-      <description lang="en">A Kodi addon repository including 4Anime.to, Bild.de and TelewizjaRepublika.pl</description>  
+      <description lang="en">A Kodi addon repository including 4Anime.to, Bild.de and Telewizja Republika</description>  
       <platform>all</platform>  
-      <genre/> 
+      <news>1.0.1 (24-03-2020) - Added the Polish TV addons, namely TVP.pl (by mbebe), WP Pilot and TVP SPORT (by cod34fun).</news> 
     </extension> 
   </addon>
   <addon id="script.module.cloudscraper" name="cloudscraper" version="1.2.26" provider-name="VeNoMouS (venom@gen-x.co.nz)"> 
