@@ -11,7 +11,7 @@ from cloudscraper import CloudScraper
 import requests
 
 import js2py
-import pyperclip
+#import pyperclip
 import re
 import sys
 
@@ -56,11 +56,6 @@ def retrieve_credentials():
         credentials, user_agent = scraper.get_tokens(BASE_URL)
         credentials['user-agent'] = user_agent
         return credentials
-    # user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:72.0) Gecko/20100101 Firefox/72.0'
-    # cf_clearance = '617b23c5fc9968aa8eaa297b9f29754c22653a0e-1581890829-0-150'
-    # cf_duid = 'd40cfab89054bdca080c8da5785f53c481581805100'
-    # return {'user-agent' : user_agent, 'cf_clearance' : cf_clearance, '__cfduid' : cf_duid}
-
 
 def create_list_item(label, info, art, is_playable):
     list_item = xbmcgui.ListItem(label=label)
@@ -107,7 +102,6 @@ def list_genre(page_url):
         anchors = div.find_all('a')
         a = anchors[0]
         img = a.img['src']
-        pyperclip.copy(img)
         href = a['href']
         label = anchors[1].text
         year = anchors[2].text
@@ -388,6 +382,5 @@ _credentials = retrieve_credentials()
 
 
 if __name__ == '__main__':
-    # Call the resolve function and pass the plugin call parameters to it.
-    # We use string slicing to trim the leading '?' from the plugin call paramstring
+    # Call the resolve function
     resolve()

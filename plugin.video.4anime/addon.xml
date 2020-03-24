@@ -8,7 +8,6 @@ provider-name="ostvanc">
   <import addon="script.module.beautifulsoup4" version="4.5.3"/>
   <import addon="script.module.cloudscraper" version="1.2.23"/>
   <import addon="script.module.js2py" version="6.02.2"/>
-  <import addon="script.module.pyperclip" version="1.7.0"/>
   <import addon="script.module.requests" version="2.22.0"/>
 </requires>
 <extension point="xbmc.python.pluginsource" library="main.py">
@@ -16,8 +15,8 @@ provider-name="ostvanc">
 </extension>
 <extension point="xbmc.addon.metadata">
   <summary lang="en">4Anime Video Addon</summary>
-  <description lang="en_GB">Kodi video plugin for the website 4Anime.to</description>
-  <disclaimer lang="en_GB">https://4anime.to</disclaimer>
+  <description lang="en_GB">Kodi video addon for the website 4Anime.to</description>
+  <website>https://4anime.to</website>
   <assets>
     <icon>icon.png</icon>
     <fanart>fanart.jpg</fanart>
@@ -28,8 +27,8 @@ provider-name="ostvanc">
   <news>
 	0.0.1 - 01/12/2019 - Initial version - added random tv show
 	0.0.2 - 03/12/2019 - added search tv show
-	0.1.0 - 04/12/2019 - added Cloudfare protection
-	0.2.0 - 08/03/2020 - added JS Evaluation
+	0.1.0 - 04/12/2019 - added Cloudflare protection bypass
+	0.2.0 - 08/03/2020 - added JavaScript evaluation
 	0.3.0 - 18/03/2020 - added search by genre
   </news>
 </extension>

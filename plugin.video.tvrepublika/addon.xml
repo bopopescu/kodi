@@ -14,7 +14,7 @@ provider-name="ostvanc">
 <extension point="xbmc.addon.metadata">
   <summary lang="en">Telewizja Republika</summary>
   <description lang="en_GB">Kodi video plugin for the Polish TV channel "Telewizja Republika".</description>
-  <disclaimer lang="en_GB">https://telewizjarepublika.pl</disclaimer>
+  <website>https://telewizjarepublika.pl</website>
   <assets>
     <icon>icon.png</icon>
     <fanart>fanart.jpg</fanart>

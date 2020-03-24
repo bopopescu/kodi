@@ -13,7 +13,7 @@ provider-name="ostvanc">
 <extension point="xbmc.addon.metadata">
   <summary lang="en">Bild.de Video Addon</summary>
   <description lang="en_GB">Kodi video plugin for the website Bild.de</description>
-  <disclaimer lang="en_GB">https://www.bild.de/video</disclaimer>
+  <website>https://www.bild.de/video</website>
   <assets>
     <icon>icon.png</icon>
     <fanart>fanart.jpg</fanart>

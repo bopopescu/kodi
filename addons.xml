@@ -7,7 +7,6 @@
       <import addon="script.module.beautifulsoup4" version="4.5.3"/>  
       <import addon="script.module.cloudscraper" version="1.2.23"/>  
       <import addon="script.module.js2py" version="6.02.2"/>  
-      <import addon="script.module.pyperclip" version="1.7.0"/>  
       <import addon="script.module.requests" version="2.22.0"/> 
     </requires>  
     <extension point="xbmc.python.pluginsource" library="main.py"> 
@@ -15,8 +14,8 @@
     </extension>  
     <extension point="xbmc.addon.metadata"> 
       <summary lang="en">4Anime Video Addon</summary>  
-      <description lang="en_GB">Kodi video plugin for the website 4Anime.to</description>  
-      <disclaimer lang="en_GB">https://4anime.to</disclaimer>  
+      <description lang="en_GB">Kodi video addon for the website 4Anime.to</description>  
+      <website>https://4anime.to</website>  
       <assets> 
         <icon>icon.png</icon>  
         <fanart>fanart.jpg</fanart>  
@@ -24,7 +23,7 @@
         <screenshot>resources\screenshots\screenshot-02.jpg</screenshot>  
         <screenshot>resources\screenshots\screenshot-03.jpg</screenshot> 
       </assets>  
-      <news>0.0.1 - 01/12/2019 - Initial version - added random tv show 0.0.2 - 03/12/2019 - added search tv show 0.1.0 - 04/12/2019 - added Cloudfare protection 0.2.0 - 08/03/2020 - added JS Evaluation 0.3.0 - 18/03/2020 - added search by genre</news> 
+      <news>0.0.1 - 01/12/2019 - Initial version - added random tv show 0.0.2 - 03/12/2019 - added search tv show 0.1.0 - 04/12/2019 - added Cloudflare protection bypass 0.2.0 - 08/03/2020 - added JavaScript evaluation 0.3.0 - 18/03/2020 - added search by genre</news> 
     </extension> 
   </addon>
   <addon id="plugin.video.bild" version="0.3.0" name="Bild.de" provider-name="ostvanc"> 
@@ -38,7 +37,7 @@
     <extension point="xbmc.addon.metadata"> 
       <summary lang="en">Bild.de Video Addon</summary>  
       <description lang="en_GB">Kodi video plugin for the website Bild.de</description>  
-      <disclaimer lang="en_GB">https://www.bild.de/video</disclaimer>  
+      <website>https://www.bild.de/video</website>  
       <assets> 
         <icon>icon.png</icon>  
         <fanart>fanart.jpg</fanart>  
@@ -86,7 +85,7 @@
       <provides>video</provides> 
     </extension>  
     <extension point="xbmc.addon.metadata"> 
-      <description lang="pl">Ogl?daj WP Pilot w Kodi!</description>  
+      <description lang="pl">Oglądaj WP Pilot w Kodi!</description>  
       <disclaimer lang="pl">This is not an official plugin! If the official application is available for your platform, use it instead of this plugin. All rights to the content are reserved by wp.pl.</disclaimer>  
       <summary lang="en">Watch WP Pilot in Kodi!</summary>  
       <description lang="en">Watch WP Pilot in Kodi!</description>  
@@ -194,10 +193,10 @@
     </extension>  
     <extension point="xbmc.addon.metadata"> 
       <description lang="en">Watch TVP SPORT in Kodi!</description>  
-      <disclaimer lang="en">This is not an official plugin! If the official application is available for your platform, use it instead of this plugin. All rights to the content are reserved by �2018 TELEWIZJA POLSKA S.A.</disclaimer>  
+      <disclaimer lang="en">This is not an official plugin! If the official application is available for your platform, use it instead of this plugin. All rights to the content are reserved by ©2018 TELEWIZJA POLSKA S.A.</disclaimer>  
       <summary lang="en">TVP SPORT</summary>  
       <description lang="en">Watch TVP SPORT in Kodi!</description>  
-      <disclaimer lang="en">This is not an official plugin! If the official application is available for your platform, use it instead of this plugin. All rights to the content are reserved by �2018 TELEWIZJA POLSKA S.A.</disclaimer>  
+      <disclaimer lang="en">This is not an official plugin! If the official application is available for your platform, use it instead of this plugin. All rights to the content are reserved by ©2018 TELEWIZJA POLSKA S.A.</disclaimer>  
       <language>pl</language>  
       <platform>all</platform>  
       <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>  
@@ -224,7 +223,7 @@
     <extension point="xbmc.addon.metadata"> 
       <summary lang="en">Telewizja Republika</summary>  
       <description lang="en_GB">Kodi video plugin for the Polish TV channel "Telewizja Republika".</description>  
-      <disclaimer lang="en_GB">https://telewizjarepublika.pl</disclaimer>  
+      <website>https://telewizjarepublika.pl</website>  
       <assets> 
         <icon>icon.png</icon>  
         <fanart>fanart.jpg</fanart>  
@@ -233,7 +232,75 @@
       <news>0.0.1 - 21/11/2019 - Initial version - added TV Livestream 0.1.0 - 23/11/2019 - added Videos and Magazines 0.1.1 - 24/11/2019 - added 'Magazyn wojskowy' and 'Zawod zolnierz' 0.1.2 - 26/11/2019 - workaround for certificate erros 0.2.0 - 01/12/2019 - refactoring due to complete youtube video hosting by TVR</news> 
     </extension> 
   </addon>
-  <addon id="repository.ostvanc" name="ostvanc addon repository" version="1.0.2" provider-name="ostvanc"> 
+  <addon id="plugin.video.youtube" name="YouTube" version="6.7.0" provider-name="anxdpanic, bromix"> 
+    <requires> 
+      <import addon="xbmc.python" version="2.20.0"/>  
+      <import addon="script.module.six" version="1.11.0"/>  
+      <import addon="script.module.requests" version="2.12.4"/>  
+      <import addon="script.module.inputstreamhelper" version="0.2.2" optional="true"/> 
+    </requires>  
+    <extension point="xbmc.python.pluginsource" library="resources/lib/default.py"> 
+      <provides>video</provides> 
+    </extension>  
+    <extension point="xbmc.service" library="resources/lib/startup.py" start="login"/>  
+    <extension point="xbmc.python.module" library="resources/lib/"/>  
+    <extension point="xbmc.addon.metadata"> 
+      <news>[add] send PlaybackInit, PlaybackStarted, PlaybackStopped notifications containing video id, channel id, and the status of the playing video [fix] allow playback regardless of API status - fixes playback for strm, playlists, other add-ons, and sharing videos from devices [fix] finding player config, allow playback to continue when not found if possible [fix] fix possible loop due to invalid keys and login information [fix] fix playback of mpeg-dash streams if HTTP Server - Listen on IP is blank [upd] use a dialog to notify users of API key requirements with link to wiki - https://ytaddon.page.link/keys [rem] remove provided api keys [lang] de_de strings |contrib: tweimer| [lang] el_gr strings |contrib: twilight0| [lang] hu_hu strings |contrib: thelacesz| [lang] pl_pl strings |contrib: drrak|</news>  
+      <assets> 
+        <icon>icon.png</icon>  
+        <fanart>fanart.jpg</fanart> 
+      </assets>  
+      <summary lang="en_GB">Plugin for YouTube</summary>  
+      <description lang="en_GB">YouTube is one of the biggest video-sharing websites of the world.</description>  
+      <disclaimer lang="en_GB">This plugin is not endorsed by Google</disclaimer>  
+      <summary lang="he_IL">תוסף עבור YouTube</summary>  
+      <description lang="he_IL">YouTube הוא אחד מאתרי שיתוף הווידאו הגדולים בעולם.</description>  
+      <summary lang="de_DE">Plugin für YouTube</summary>  
+      <description lang="de_DE">YouTube ist eines der größten Video-Sharing-Websites der Welt.</description>  
+      <summary lang="pl_PL">Wtyczka YouTube</summary>  
+      <description lang="pl_PL">YouTube jest jednym z największych na świecie serwisów udostępniania wideo.</description>  
+      <summary lang="hu_HU">YouTube kiegészítő</summary>  
+      <description lang="hu_HU">A YouTube világ egyik legnagyobb videómegosztó weboldala.</description>  
+      <summary lang="es_ES">Plugin para YouTube</summary>  
+      <description lang="es_ES">YouTube es uno de los sitios web para compartir videos más grande del mundo.</description>  
+      <disclaimer lang="es_ES">Este add-on no está respaldado por Google</disclaimer>  
+      <summary lang="es_MX">Plugin para YouTube</summary>  
+      <description lang="es_MX">YouTube es uno de los más grandes sitios web de intercambio de videos del mundo.</description>  
+      <disclaimer lang="es_MX">Este add-on no está respaldado por Google</disclaimer>  
+      <summary lang="ru_RU">Видеодополнение YouTube</summary>  
+      <description lang="ru_RU">YouTube - популярнейший видеохостинговый сайт, предоставляющий пользователям услуги хранения, доставки и показа видео.</description>  
+      <summary lang="fr_FR">Plugin pour YouTube</summary>  
+      <description lang="fr_FR">YouTube est l'un des plus grands sites de partage vidéos du monde.</description>  
+      <summary lang="zh_CN">YouTube附加元件</summary>  
+      <description lang="zh_CN">「Youtube」是全世界最大的影片分享網站</description>  
+      <summary lang="zh_TW">YouTube附加元件</summary>  
+      <description lang="zh_TW">「Youtube」是全世界最大的影片分享網站</description>  
+      <disclaimer lang="zh_TW">此附加元件未由Google支持</disclaimer>  
+      <summary lang="bg_BG">Добавка за YouTube</summary>  
+      <description lang="bg_BG">YouTube е един от най-големите уеб сайтове за споделяне на видео в целия свят.</description>  
+      <summary lang="el_GR">Πρόσθετο YouTube</summary>  
+      <description lang="el_GR">Το YouTube είναι μία από τις μεγαλύτερες ιστοσελίδες διαμοιρασμού βίντεο στον κόσμο.</description>  
+      <disclaimer lang="el_GR">Η παρούσα μικροεφαρμογή δεν έχει υϊοθετηθεί από την Google</disclaimer>  
+      <summary lang="nb_NO">Tillegg for YouTube</summary>  
+      <description lang="nb_NO">YouTube er en av verdens største nettsider for videodeling.</description>  
+      <summary lang="ko_KR">유튜브 플러그인</summary>  
+      <description lang="ko_KR">유튜브는 세상에서 가장 큰 동영상 공유 사이트 중의 하나입니다.</description>  
+      <summary lang="cs_CZ">Plugin pro YouTube</summary>  
+      <description lang="cs_CZ">YouTube je jedna z největších webových stránek světa sdílející video.</description>  
+      <disclaimer lang="cs_CZ">Tento plugin není schválen společností Google</disclaimer>  
+      <summary lang="tr_TR">YouTube için eklenti</summary>  
+      <description lang="tr_TR">YouTube, dünya üzerindeki en büyük video paylaşma platformlarından birisidir</description>  
+      <disclaimer lang="tr_TR">Bu eklenti Google tarafından üretilmemiştir</disclaimer>  
+      <platform>all</platform>  
+      <license>GPL-2.0-only</license>  
+      <forum>https://forum.kodi.tv/showthread.php?tid=348464</forum>  
+      <website>https://www.youtube.com</website>  
+      <email>ytplugin at datanet dot ws</email>  
+      <source>https://github.com/jdf76/plugin.video.youtube</source>  
+      <reuselanguageinvoker>true</reuselanguageinvoker> 
+    </extension> 
+  </addon>
+  <addon id="repository.ostvanc" name="ostvanc addon repository" version="1.0.3" provider-name="ostvanc"> 
     <extension point="xbmc.addon.repository" name="ostvanc Repository"> 
       <info compressed="false">https://github.com/ostvanc/kodi/raw/master/addons.xml</info>  
       <checksum>https://github.com/ostvanc/kodi/raw/master/addons.xml.md5</checksum>  
@@ -243,7 +310,7 @@
       <summary lang="en">ostvanc addon repository</summary>  
       <description lang="en">A Kodi addon repository including 4Anime.to, Bild.de and Telewizja Republika</description>  
       <platform>all</platform>  
-      <news>1.0.1 (24-03-2020) - Added the Polish TV addons, namely TVP.pl (by mbebe), WP Pilot and TVP SPORT (by cod34fun). 1.0.2 (24-03-2020) - Added the Italian TV addons, namely Rai Play (by Nightflyer, cttynul, maxbambi, fabpolli) and Mediaset Play (by kodi-bino, cttynul).</news> 
+      <news>1.0.1 (24-03-2020) - Added the Polish TV addons, namely TVP.pl (by mbebe), WP Pilot and TVP SPORT (by cod34fun). 1.0.2 (24-03-2020) - Added the Italian TV addons, namely Rai Play (by Nightflyer, cttynul, maxbambi, fabpolli) and Mediaset Play (by kodi-bino, cttynul). 1.0.3 (24-03-2020) - Added the YouTube addon (by anxdpanic, bromix).</news> 
     </extension> 
   </addon>
   <addon id="script.module.cloudscraper" name="cloudscraper" version="1.2.26" provider-name="VeNoMouS (venom@gen-x.co.nz)"> 
