@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="repository.ostvanc" name="ostvanc addon repository" version="1.0.3" provider-name="ostvanc">
+<addon id="repository.ostvanc" name="ostvanc addon repository" version="1.0.4" provider-name="ostvanc">
 	<extension point="xbmc.addon.repository" name="ostvanc Repository">
 		<info compressed="false">https://github.com/ostvanc/kodi/raw/master/addons.xml</info>
 		<checksum>https://github.com/ostvanc/kodi/raw/master/addons.xml.md5</checksum>
@@ -15,6 +15,8 @@
 			- Added the Italian TV addons, namely Rai Play (by Nightflyer, cttynul, maxbambi, fabpolli) and Mediaset Play (by kodi-bino, cttynul).
 			1.0.3 (24-03-2020)
 			- Added the YouTube addon (by anxdpanic, bromix).
+			1.0.4 (06-04-2020)
+			- Added the Amazon VOD addon (by Sandmann79, Varstahl).
 		</news>
 	</extension>
 </addon>
