@@ -103,6 +103,44 @@
       <news>1.2.0 - 21/12/2018 - Cambiato approccio per canali Live (i link usati in precedenza non ritornano ora 404), i nuovi link sembrano bloccati dall'estero 1.2.1 - 02/01/2019 - Fix riproduzione video su Android con versioni di Kodi superiori alla 17 (ora utilizza InputStreamAdactive sempre su Android) 1.2.2 - 11/06/2019 - Aggiunta compatibilita' Python 3 e retrocompatibilita' Python 2.</news> 
     </extension> 
   </addon>
+  <addon id="plugin.video.mediathekview" name="MediathekView" version="0.6.2" provider-name="MediathekView.de, Leo Moll"> 
+    <requires> 
+      <import addon="xbmc.python" version="2.25.0"/>  
+      <import addon="script.module.requests" version="2.12.4"/>  
+      <import addon="script.module.myconnpy" version="1.1.7"/>  
+      <import addon="script.module.ijson" version="2.3"/>  
+      <import addon="script.module.defusedxml" version="0.5.0"/> 
+    </requires>  
+    <extension point="xbmc.python.pluginsource" library="addon.py"> 
+      <provides>video</provides> 
+    </extension>  
+    <extension point="xbmc.service" library="service.py" start="startup"/>  
+    <extension point="xbmc.addon.metadata"> 
+      <summary lang="de_DE">Öffentlich-Rechtliche Mediatheken</summary>  
+      <summary lang="en_GB">Public service video-platforms</summary>  
+      <summary lang="it_IT">Piattaforme video dalle emittenti pubbliche</summary>  
+      <description lang="de_DE">Ermöglicht den Zugriff auf fast alle deutschen Mediatheken der öffentlich Rechtlichen basierend auf der Datenbank von MediathekView.de</description>  
+      <description lang="en_GB">Gives access to most video-platforms from German public service broadcasters using the database of MediathekView.de</description>  
+      <description lang="it_IT">Fornisce l'accesso a gran parte delle piattaforme video operate dalle emittenti pubbliche tedesche usando la banca dati di MediathekView.de</description>  
+      <news>v.0.6.2 (2019-03-10): - Bugfix: Entpacken von GZ-Archiven auf FireTV 4K und ähnliche Geräte funktioniert nun wieder - Bugfix: mvupdate funktioniert nun wieder - Compliance: Code Kompatibilität für zukünftige Kodi Versionen mit Python 3 v.0.6.1 (2019-03-08): - Bugfix: Fixed module exception due to case error v0.6.0 (2019-03-01): - Feature: Cache der Anfragen für lokale Datenbanken - Feature: Natives ultraschnelles Update für SQLite - Bugfix: Live Streams konnten heruntergeladen werden - Bugfix: Auf Kodi 18 hat der automatische Aktualisierungsmodus nicht mehr funktioniert - Feature: Neue option --full um ein vollstndiges Update zu erzwingen - Feature: Neue Aktualisierungsmethode "Zeitgesteuert" - Bugfix: Es war nicht möglich, den Aktualisierungsintervall bei der Methode "Automatisch" einzustellen - Feature: Passende Symbole für alle Menü-Einträge</news>  
+      <platform>all</platform>  
+      <language>de fr</language>  
+      <license>MIT License</license>  
+      <forum>https://forum.kodi.tv/showthread.php?tid=326799</forum>  
+      <source>https://github.com/mediathekview/plugin.video.mediathekview</source>  
+      <website>https://mediathekview.de/</website>  
+      <email>info@mediathekview.de</email>  
+      <assets> 
+        <icon>resources/icon.png</icon>  
+        <fanart>resources/fanart.jpg</fanart>  
+        <screenshot>resources/screenshot1.png</screenshot>  
+        <screenshot>resources/screenshot2.png</screenshot>  
+        <screenshot>resources/screenshot3.png</screenshot>  
+        <screenshot>resources/screenshot4.png</screenshot>  
+        <screenshot>resources/screenshot5.png</screenshot> 
+      </assets> 
+    </extension> 
+  </addon>
   <addon id="plugin.video.pilot.wp" name="WP Pilot" version="0.1.2" provider-name="c0d34fun"> 
     <requires> 
       <import addon="xbmc.python" version="2.25.0"/>  
@@ -329,7 +367,7 @@
       <reuselanguageinvoker>true</reuselanguageinvoker> 
     </extension> 
   </addon>
-  <addon id="repository.ostvanc" name="ostvanc addon repository" version="1.0.6" provider-name="ostvanc"> 
+  <addon id="repository.ostvanc" name="ostvanc addon repository" version="1.0.7" provider-name="ostvanc"> 
     <extension point="xbmc.addon.repository" name="ostvanc Repository"> 
       <info compressed="false">https://github.com/ostvanc/kodi/raw/master/addons.xml</info>  
       <checksum>https://github.com/ostvanc/kodi/raw/master/addons.xml.md5</checksum>  
@@ -339,7 +377,7 @@
       <summary lang="en">ostvanc addon repository</summary>  
       <description lang="en">A Kodi addon repository including 4Anime.to, Bild.de and Telewizja Republika</description>  
       <platform>all</platform>  
-      <news>1.0.1 (24-03-2020) - Added the Polish TV addons, namely TVP.pl (by mbebe), WP Pilot and TVP SPORT (by cod34fun). 1.0.2 (24-03-2020) - Added the Italian TV addons, namely Rai Play (by Nightflyer, cttynul, maxbambi, fabpolli) and Mediaset Play (by kodi-bino, cttynul). 1.0.3 (24-03-2020) - Added the YouTube addon (by anxdpanic, bromix). 1.0.4 (06-04-2020) - Added the Amazon VOD addon (by Sandmann79, Varstahl). 1.0.5 (07-04-2020) - Added dependencies for Amazon VOD addon. 1.0.6 (07-04-2020) - Changed version of Kodi-Six (down to 0.0.5) and TVP SPORT (up to 0.0.11).</news> 
+      <news>1.0.1 (24-03-2020) - Added the Polish TV addons, namely TVP.pl (by mbebe), WP Pilot and TVP SPORT (by cod34fun). 1.0.2 (24-03-2020) - Added the Italian TV addons, namely Rai Play (by Nightflyer, cttynul, maxbambi, fabpolli) and Mediaset Play (by kodi-bino, cttynul). 1.0.3 (24-03-2020) - Added the YouTube addon (by anxdpanic, bromix). 1.0.4 (06-04-2020) - Added the Amazon VOD addon (by Sandmann79, Varstahl). 1.0.5 (07-04-2020) - Added dependencies for Amazon VOD addon. 1.0.6 (07-04-2020) - Changed version of Kodi-Six (down to 0.0.5) and TVP SPORT (up to 0.0.11). 1.0.7 (07-04-2020) - Added the MediathekView addon (by MediathekView.de, Leo Moll)</news> 
     </extension> 
   </addon>
   <addon id="script.module.cloudscraper" name="cloudscraper" version="1.2.26" provider-name="VeNoMouS (venom@gen-x.co.nz)"> 
@@ -354,6 +392,39 @@
       <license>MIT</license>  
       <platform>all</platform>  
       <website>https://github.com/venomous/cloudscraper</website>  
+      <assets> 
+        <icon>icon.png</icon> 
+      </assets> 
+    </extension> 
+  </addon>
+  <addon id="script.module.defusedxml" name="defusedxml" version="0.6.0" provider-name="Christian Heimes"> 
+    <requires> 
+      <import addon="xbmc.python" version="2.25.0"/> 
+    </requires>  
+    <extension point="xbmc.python.module" library="lib"/>  
+    <extension point="xbmc.addon.metadata"> 
+      <summary lang="en_GB">defusedxml -- defusing XML bombs and other exploits</summary>  
+      <description lang="en_GB">Packed for KODI from https://github.com/tiran/defusedxml</description>  
+      <platform>all</platform>  
+      <license>PSF</license>  
+      <website>https://pypi.org/project/defusedxml/</website>  
+      <source>https://github.com/tiran/defusedxml</source>  
+      <assets> 
+        <icon>icon.png</icon> 
+      </assets> 
+    </extension> 
+  </addon>
+  <addon id="script.module.ijson" name="ijson" version="2.5" provider-name="Rodrigo Tobar, Ivan Sagalaev"> 
+    <requires> 
+      <import addon="xbmc.python" version="2.25.0"/> 
+    </requires>  
+    <extension point="xbmc.python.module" library="lib"/>  
+    <extension point="xbmc.addon.metadata"> 
+      <summary lang="en_GB">Iterative JSON parser with a standard Python iterator interface</summary>  
+      <description lang="en_GB">Packed for KODI from https://github.com/isagalaev/ijson</description>  
+      <license>BSD-3-Clause</license>  
+      <website>https://pypi.org/project/ijson/</website>  
+      <source>https://github.com/ICRAR/ijson</source>  
       <assets> 
         <icon>icon.png</icon> 
       </assets> 
@@ -445,6 +516,20 @@
       <license>MIT</license>  
       <platform>all</platform>  
       <source>https://github.com/MechanicalSoup/MechanicalSoup</source> 
+    </extension> 
+  </addon>
+  <addon id="script.module.myconnpy" name="MySQL Connector/Python" version="1.1.7" provider-name="MySQL"> 
+    <requires> 
+      <import addon="xbmc.python" version="2.1.0"/> 
+    </requires>  
+    <extension point="xbmc.python.module" library="lib"/>  
+    <extension point="xbmc.addon.metadata"> 
+      <summary lang="en">MySQL Connector/Python</summary>  
+      <description lang="en">MySQL Connector/Python is implementing the MySQL Client/Server protocol completely in Python. This means you don't have to compile anything or MySQL (client library) doesn't even have to be installed on the machine.</description>  
+      <license>GPLv2</license>  
+      <platform>all</platform>  
+      <website>http://dev.mysql.com/doc/connector-python/en/index.html</website>  
+      <source>http://dev.mysql.com/downloads/connector/python/</source> 
     </extension> 
   </addon>
   <addon id="script.module.pyautogui" name="PyAutoGUI" version="0.9.49" provider-name="Al Sweigart"> 
@@ -544,9 +629,9 @@
       <news>Added compatibility with Python 3</news> 
     </extension> 
   </addon>
-  <addon id="script.module.requests" name="requests" version="2.9.1" provider-name="kennethreitz, beenje"> 
+  <addon id="script.module.requests" name="requests" version="2.22.1" provider-name="kennethreitz, beenje"> 
     <requires> 
-      <import addon="xbmc.python" version="2.14.0"/> 
+      <import addon="xbmc.python" version="2.1.0"/> 
     </requires>  
     <extension point="xbmc.python.module" library="lib"/>  
     <extension point="xbmc.addon.metadata"> 

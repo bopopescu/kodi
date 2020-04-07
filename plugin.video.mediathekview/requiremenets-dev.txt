@@ -1,0 +1,6 @@
+ijson
+defusedxml
+mysql-connector==2.1.4
+
+pylint==1.9.3
+autopep8
