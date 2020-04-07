@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<addon id="plugin.video.tvpsport" name="TVP SPORT" version="0.0.8" provider-name="c0d34fun">
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<addon id="plugin.video.tvpsport" name="TVP SPORT" version="0.0.11" provider-name="c0d34fun">
     <requires>
         <import addon="xbmc.python" version="2.25.0"/>
         <import addon="script.module.requests" version="2.12.4"/>

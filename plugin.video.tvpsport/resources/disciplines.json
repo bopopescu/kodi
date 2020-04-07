@@ -247,84 +247,7 @@
       "sport_id": 1,
       "active_tab": "lineup",
       "subcategory": {
-         "624876": {
-            "name": "Reprezentacja",
-            "score": {
-               "tt_id": 77
-            }
-         },
-         "19226713": {
-            "name": "Mundial 2018",
-            "score": {
-               "tt_id": 77
-            }
-         },
-         "436434": {
-            "name": "Liga Mistrzów",
-            "score": {
-               "tt_id": 42
-            }
-         },
-         "436417": {
-            "name": "Liga Europejska",
-            "score": {
-               "tt_id": 73
-            }
-         },
-         "436246": {
-            "name": "Ekstraklasa",
-            "score": {
-               "tt_id": 196
-            }
-         },
-         "436419": {
-            "name": "Anglia",
-            "score": {
-               "tt_id": 47
-            }
-         },
-         "436421": {
-            "name": "Niemcy",
-            "score": {
-               "tt_id": 54
-            }
-         },
-         "436423": {
-            "name": "Włochy",
-            "score": {
-               "tt_id": 55
-            }
-         },
-         "462349": {
-            "name": "Hiszpania",
-            "score": {
-               "tt_id": 87
-            }
-         },
-         "462350": {
-            "name": "Francja",
-            "score": {
-               "tt_id": 53
-            }
-         },
-         "27040528": {
-            "name": "Futsal"
-         },
-         "750095": {
-            "name": "I liga",
-            "score": {
-               "tt_id": 197
-            }
-         },
-         "436416": {
-            "name": "Puchar Polski",
-            "score": {
-               "tt_id": 198
-            }
-         },
-         "16850343": {
-            "name": "Szkolenie młodzieży"
-         }
+         "624876":{"name":"Reprezentacja"},"45231149":{"name":"Euro 2020"},"436246":{"name":"Ekstraklasa"},"436434":{"name":"Liga Mistrzów"},"436417":{"name":"Liga Europy"},"436419":{"name":"Anglia"},"462349":{"name":"Hiszpania"},"436421":{"name":"Niemcy"},"436423":{"name":"Włochy"},"462350":{"name":"Francja"},"436424":{"name":"Inne ligi"},"436416":{"name":"Puchar Polski"},"43051558":{"name":"ME U21"},"42642523":{"name":"MŚ U20"},"42953129":{"name":"Reprezentacja kobiet"},"29404274":{"name":"Reprezentacja TVP"}
       }
    },
    "436306": {
@@ -355,7 +278,7 @@
       }
    },
    "436312": {
-      "name": "HOKEJ NA LODZIE",
+      "name": "Hokej na lodzie",
       "title": "",
       "icon": "./app/public/images/IconDyscipline/hokej.png",
       "sport_id": 5,
@@ -379,7 +302,7 @@
       }
    },
    "609277": {
-      "name": "BIEGI NARCIARSKIE",
+      "name": "Biegi narciarskie",
       "title": "",
       "icon": "./app/public/images/IconDyscipline/bieginarciarskie.png",
       "sport_id": 9,
@@ -387,7 +310,7 @@
       "subcategory": {}
    },
    "609531": {
-      "name": "SKOKI NARCIARSKIE",
+      "name": "Skoki narciarskie",
       "title": "",
       "icon": "./app/public/images/IconDyscipline/skoki.png",
       "sport_id": 17,
@@ -395,7 +318,7 @@
       "subcategory": {}
    },
    "609282": {
-      "name": "ŁYŻWIARSTWO SZYBKIE",
+      "name": "Łyżwiarstwo szybkie",
       "title": "",
       "icon": "./app/public/images/IconDyscipline/lyzwiarstwoszybkie.png",
       "sport_id": 19,
@@ -403,7 +326,7 @@
       "subcategory": {}
    },
    "436301": {
-      "name": "PIŁKA RĘCZNA",
+      "name": "Piłka ręczna",
       "title": "",
       "icon": "./app/public/images/IconDyscipline/pilkareczna.png",
       "sport_id": 20,
@@ -442,7 +365,7 @@
       }
    },
    "536353": {
-      "name": "SPORTY MOTOROWE",
+      "name": "Sporty motorowe",
       "title": "",
       "icon": "./app/public/images/IconDyscipline/moto.png",
       "active_tab": "stats",
@@ -465,7 +388,7 @@
       }
    },
    "436313": {
-      "name": "KOSZYKÓWKA",
+      "name": "Koszykówka",
       "title": "",
       "icon": "./app/public/images/IconDyscipline/koszykowka.png",
       "sport_id": 23,
@@ -501,7 +424,7 @@
       }
    },
    "436299": {
-      "name": "SIATKÓWKA",
+      "name": "Siatkówka",
       "title": "",
       "icon": "./app/public/images/IconDyscipline/siatkowka.png",
       "sport_id": 51,
@@ -543,7 +466,7 @@
       }
    },
    "436310": {
-      "name": "ŻUŻEL",
+      "name": "Żużel",
       "title": "",
       "icon": "./app/public/images/IconDyscipline/zuzel.png",
       "sport_id": 76,
@@ -573,7 +496,7 @@
       }
    },
    "609218": {
-      "name": "KOLARSTWO",
+      "name": "Kolarstwo",
       "title": "",
       "icon": "./app/public/images/IconDyscipline/kolarstwo.png",
       "active_tab": "none",
@@ -590,35 +513,64 @@
       }
    },
    "609220": {
-      "name": "LEKKOATLETYKA",
+      "name": "Lekkoatletyka",
       "title": "",
       "icon": "./app/public/images/IconDyscipline/lekkoatletyka.png",
       "active_tab": "none",
       "subcategory": {}
    },
    "609311": {
-      "name": "PŁYWANIE",
+      "name": "Pływanie",
       "title": "",
       "icon": "./app/public/images/IconDyscipline/plywanie.png",
       "active_tab": "none",
       "subcategory": {}
    },
    "609248": {
-      "name": "SPORT NIEPEŁNOSPRAWNYCH",
+      "name": "Niepełnosprawni",
       "title": "",
       "icon": "./app/public/images/IconDyscipline/parasport.png",
       "subcategory": {},
       "active_tab": "none"
    },
+   "41691990":{
+      "name": "Sporty walki",
+      "title": "",
+      "icon": "./app/public/images/IconDyscipline/parasport.png",
+      "subcategory": {},
+      "active_tab": "none"
+   }, 
+   "436302":{
+      "name": "Inne",
+      "title": "",
+      "icon": "./app/public/images/IconDyscipline/parasport.png",
+      "subcategory": {},
+      "active_tab": "none"
+   }, 
+   "536354":{
+      "name": "Zimowe",
+      "title": "",
+      "icon": "./app/public/images/IconDyscipline/parasport.png",
+      "subcategory": {},
+      "active_tab": "none"
+   }, 
+   "30788346":{
+      "name": "Retro",
+      "title": "",
+      "icon": "./app/public/images/IconDyscipline/parasport.png",
+      "subcategory": {},
+      "active_tab": "none"
+   }, 
+   
    "609245": {
-      "name": "BOKS",
+      "name": "Boks",
       "title": "",
       "icon": "./app/public/images/IconDyscipline/boks.png",
       "active_tab": "none",
       "subcategory": {}
    },
    "29387042": {
-      "name": "E-SPORT",
+      "name": "E-sport",
       "title": "",
       "icon": "./app/public/images/IconDyscipline/esport.png",
       "sport_id": 79,

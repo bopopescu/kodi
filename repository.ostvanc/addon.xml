@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="repository.ostvanc" name="ostvanc addon repository" version="1.0.5" provider-name="ostvanc">
+<addon id="repository.ostvanc" name="ostvanc addon repository" version="1.0.6" provider-name="ostvanc">
 	<extension point="xbmc.addon.repository" name="ostvanc Repository">
 		<info compressed="false">https://github.com/ostvanc/kodi/raw/master/addons.xml</info>
 		<checksum>https://github.com/ostvanc/kodi/raw/master/addons.xml.md5</checksum>
@@ -19,6 +19,8 @@
 			- Added the Amazon VOD addon (by Sandmann79, Varstahl).
 			1.0.5 (07-04-2020)
 			- Added dependencies for Amazon VOD addon.
+			1.0.6 (07-04-2020)
+			- Changed version of Kodi-Six (down to 0.0.5) and TVP SPORT (up to 0.0.11).
 		</news>
 	</extension>
 </addon>

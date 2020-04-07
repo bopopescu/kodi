@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import sys
+import sys,re
 from urlparse import parse_qsl
 import urllib
 import requests
@@ -15,7 +15,6 @@ import json
 import m3u8
 import inputstreamhelper
 from HTMLParser import HTMLParser
-
 
 class MLStripper(HTMLParser):
     def __init__(self):
@@ -65,7 +64,7 @@ def build_image_url(image_name):
     return url
 
 
-def add_item(movie_id, name, description, image, playable):
+def add_item(movie_id, name, description, code,image, playable,page=1):
     s = MLStripper()
     s.feed(description)
 
@@ -74,7 +73,8 @@ def add_item(movie_id, name, description, image, playable):
     list_item.setInfo(type='video', infoLabels={
         'title': name,
         'sorttitle': name,
-        'plot': s.get_data()
+        'plot': s.get_data(),
+        'code': code,
     })
     list_item.setArt({'thumb': image, 'poster': image, 'banner': image, 'fanart': image})
     xbmcplugin.addDirectoryItem(
@@ -85,10 +85,10 @@ def add_item(movie_id, name, description, image, playable):
     )
 
 
-def add_folder(name, param={}, fanart=None):
-    list_item = xbmcgui.ListItem(name.capitalize())
+def add_folder(name, param={}, isfold=True, image=None,fanart=None):
+    list_item = xbmcgui.ListItem(name)
     if fanart:
-        list_item.setArt({'fanart': fanart})
+        list_item.setArt({'thumb': image, 'poster': image, 'banner': image, 'fanart': fanart})
     list_item.setInfo(type='video', infoLabels={
         'title': name,
         'sorttitle': name
@@ -97,7 +97,7 @@ def add_folder(name, param={}, fanart=None):
         handle=addon_handle,
         url=build_url(param),
         listitem=list_item,
-        isFolder=True
+        isFolder=isfold
     )
 
 
@@ -114,13 +114,17 @@ def add_separator(name, image=resources+'transparent.png', param={}):
 
 
 def home():
-    add_folder('Dyscypliny', {'mode': 'disciplines'}, resources+'fanart.jpg')
-    add_folder('Transmisje', {'mode': 'live'}, resources+'fanart.jpg')
-    add_folder('Wideo', {'mode': 'videos'}, resources+'fanart.jpg')
+    add_folder('Transmisje', {'mode': 'live'}, image=resources+'icon.png',fanart=resources+'fanart.jpg') 
+    add_folder('Dyscypliny', {'mode': 'disciplines'}, image=resources+'icon.png',fanart=resources+'fanart.jpg')
+    add_folder('Magazyny', {'mode': 'magazyny'}, image=resources+'icon.png',fanart=resources+'fanart.jpg')
+    add_folder('Wideo', {'mode': 'videos'}, image=resources+'icon.png',fanart=resources+'fanart.jpg')
+    add_folder('TVP Sport YT', {'mode': 'PlayYT','kanal':'youtube/user/sporttvppl/'}, isfold=False,image=resources+'icon.png',fanart=resources+'fanart.jpg')
+    add_folder('Szukaj wideo', {'mode': 'search'}, image=resources+'icon.png',fanart=resources+'fanart.jpg')
     xbmcplugin.endOfDirectory(addon_handle)
 
 
 def live():
+    code =''
     streams = requests.get(
         'http://www.api.v3.tvp.pl/shared/listing_blackburst.php?dump=json&nocount=1&type=video&parent_id=3116100&copy=true&direct=true&order=release_date_long,1&count=-1&filter={%22paymethod%22:0}',
         headers=headers,
@@ -155,7 +159,7 @@ def live():
         if d.day == now.day and d.month == now.month and d.year == now.year:
             title = 'Dzisiaj'
 
-        add_separator('[I]' + title + '[/I]')
+        add_separator('[B][I][COLOR khaki]' + title + '[/B][/I][/COLOR]')
         for item in sections[datestr]:
             movie_id = item.get('asset_id', '')
             release_hour = item.get('release_date_hour', '')
@@ -171,13 +175,62 @@ def live():
             playable = 'false'
             if item.get('play_mode', 0) == 2 and item.get('is_live', False):
                 playable = 'true'
-                name = '[B]TRWA:[/B] ' + name
+                name = '[B][COLOR gold]TRWA:[/COLOR][/B] ' + name
 
-            add_item(movie_id, name, description, image, playable)
+            add_item(movie_id, name, description, code, image, playable)
 
     xbmcplugin.endOfDirectory(addon_handle)
 
-
+def search(query='',pag=1):
+    code=''
+    if not query:
+        query = params.get('query', None)
+        pag = params.get('strona', None)
+    html = requests.get(
+        'https://sport.tvp.pl/wyszukiwarka?query='+query+'&type=wideo&filter_date=30days&sort_by=date&page='+str(pag),
+        headers=headers,
+        verify=False
+    ).text
+    def parse_item(item):
+        movie_id = item.get('_id', '')
+        name = item.get('title', '')
+        images = item.get('image', [])
+        image_dict = next(iter(images), None)
+        description = item.get('lead', [])
+        czs = item.get("publication_start", '')
+        code = czas(czs)
+        image = ''
+        if image_dict:
+            image = build_image_url(images.get('file_name', None))
+        playable = 'true'
+        add_item(movie_id, name, description, code,image, playable)
+    dirdata=re.findall('directoryData\s*=.+?(\{.+?)<\/script>',html,re.DOTALL)
+	
+    ab=json.loads(dirdata[0][:-2])
+    razem = ab["items_total_count"]
+    strona = ab["items_page"]
+    
+    items=ab['items']
+    if items:
+        for item in items:
+            try:
+            	parse_item(item)
+            except:
+            	pass
+        if strona*10<razem:
+        	pg = strona+1
+        	add_folder(name='NASTĘPNA STRONA >>', param={'mode':'searchnp','query': query, 'strona': pg},isfold=True)
+        xbmcplugin.addSortMethod(addon_handle, sortMethod=xbmcplugin.SORT_METHOD_NONE, label2Mask="%R, %Y, %P")
+        
+        xbmcplugin.setContent(addon_handle, 'videos')
+        xbmcplugin.endOfDirectory(addon_handle)
+    else:
+    	xbmcgui.Dialog().notification('[B]Uwaga[/B]', 'Nic nie znaleziono.',xbmcgui.NOTIFICATION_INFO, 6000)
+def czas(tstamp):
+    value = datetime.fromtimestamp(int(tstamp)/1000)
+    exct_time = value.strftime('%d.%m.%y')#('%Y-%m-%d %H:%M')
+    return exct_time
+	
 def videos():
     video_category = params.get('video_category', '432801')
     prev_release_dates = params.get('prev_release_dates', None)
@@ -207,11 +260,15 @@ def videos():
         images = item.get('image', [])
         image_dict = next(iter(images), None)
         description = item.get('lead', [])
+        czs = item.get('release_date_dt', '')
+
+        godz = item.get('release_date_hour', '')
+        code = czs#+' - '+godz
         image = ''
         if image_dict:
             image = build_image_url(image_dict.get('file_name', None))
         playable = 'true'
-        add_item(movie_id, name, description, image, playable)
+        add_item(movie_id, name, description, code,image, playable)
 
     if len(prev_release_dates) > 0:
         add_separator(name='<< POPRZEDNIA STRONA', param={'mode': 'prev_page', 'prev_release_dates': pickle.dumps(prev_release_dates), 'video_category': video_category})
@@ -228,7 +285,9 @@ def videos():
 
     if len(items) == 15:
         add_separator(name='NASTĘPNA STRONA >>', param={'mode': 'next_page', 'prev_release_dates': pickle.dumps(prev_release_dates), 'video_category': video_category})
+    xbmcplugin.addSortMethod(addon_handle, sortMethod=xbmcplugin.SORT_METHOD_NONE, label2Mask="%R, %Y, %P")
 
+    xbmcplugin.setContent(addon_handle, 'videos')
     xbmcplugin.endOfDirectory(addon_handle)
 
 
@@ -253,29 +312,32 @@ def next_page():
 
     xbmc.executebuiltin('Container.Update("%s",replace)' % build_url({'mode': 'videos', 'prev_release_dates': pickle.dumps(prev_release_dates), 'video_category': video_category}))
 
-
 def disciplines():
     xbmcplugin.addSortMethod(handle=addon_handle, sortMethod=xbmcplugin.SORT_METHOD_TITLE)
 
     sub_disciplines = params.get('sub_disciplines', None)
-
+    imig=''
     if sub_disciplines:
         data = pickle.loads(sub_disciplines)
     else:
-        with open(resources + '/disciplines.json') as f:
+    	dane='/disciplines.json'
+    	if params.get('mode', None)=='magazyny':
+    		dane ='/magazyny.json'
+        with open(resources + dane) as f:
             data = json.load(f)
-
+    
     for key, value in data.iteritems():
         name = value.get('name', '')
+        imig = value.get("icon", '')
         sub_disciplines = value.get('subcategory', {})
-
+    
         if sub_disciplines:
             param = {'mode': 'disciplines', 'sub_disciplines': pickle.dumps(sub_disciplines)}
         else:
             param = {'mode': 'videos', 'video_category': key}
-
-        add_folder(name, param, resources+'fanart.jpg')
-
+    
+        add_folder(name, param, True,imig,resources+'fanart.jpg')
+    
     xbmcplugin.endOfDirectory(addon_handle)
 
 
@@ -325,14 +387,21 @@ def play():
 
 if __name__ == '__main__':
     mode = params.get('mode', None)
-
+    
     if not mode:
         home()
     elif mode == 'live':
         live()
+		
+    elif mode == 'PlayYT':
+        kanal= params.get('kanal', None)
+        xbmc.executebuiltin('container.Update(plugin://plugin.video.%s)'%kanal)
+		
     elif mode == 'videos':
         videos()
     elif mode == 'disciplines':
+        disciplines()
+    elif mode == 'magazyny':
         disciplines()
     elif mode == 'prev_page':
         prev_page()
@@ -340,3 +409,9 @@ if __name__ == '__main__':
         next_page()
     elif mode == 'play':
         play()
+    elif mode == 'search':
+        query = xbmcgui.Dialog().input(u'Szukaj wideo:', type=xbmcgui.INPUT_ALPHANUM)
+        if query:  
+        	search(query,1)
+    elif mode == 'searchnp':
+        search()

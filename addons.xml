@@ -210,7 +210,7 @@
       </assets> 
     </extension> 
   </addon>
-  <addon id="plugin.video.tvpsport" name="TVP SPORT" version="0.0.8" provider-name="c0d34fun"> 
+  <addon id="plugin.video.tvpsport" name="TVP SPORT" version="0.0.11" provider-name="c0d34fun"> 
     <requires> 
       <import addon="xbmc.python" version="2.25.0"/>  
       <import addon="script.module.requests" version="2.12.4"/>  
@@ -329,7 +329,7 @@
       <reuselanguageinvoker>true</reuselanguageinvoker> 
     </extension> 
   </addon>
-  <addon id="repository.ostvanc" name="ostvanc addon repository" version="1.0.5" provider-name="ostvanc"> 
+  <addon id="repository.ostvanc" name="ostvanc addon repository" version="1.0.6" provider-name="ostvanc"> 
     <extension point="xbmc.addon.repository" name="ostvanc Repository"> 
       <info compressed="false">https://github.com/ostvanc/kodi/raw/master/addons.xml</info>  
       <checksum>https://github.com/ostvanc/kodi/raw/master/addons.xml.md5</checksum>  
@@ -339,7 +339,7 @@
       <summary lang="en">ostvanc addon repository</summary>  
       <description lang="en">A Kodi addon repository including 4Anime.to, Bild.de and Telewizja Republika</description>  
       <platform>all</platform>  
-      <news>1.0.1 (24-03-2020) - Added the Polish TV addons, namely TVP.pl (by mbebe), WP Pilot and TVP SPORT (by cod34fun). 1.0.2 (24-03-2020) - Added the Italian TV addons, namely Rai Play (by Nightflyer, cttynul, maxbambi, fabpolli) and Mediaset Play (by kodi-bino, cttynul). 1.0.3 (24-03-2020) - Added the YouTube addon (by anxdpanic, bromix). 1.0.4 (06-04-2020) - Added the Amazon VOD addon (by Sandmann79, Varstahl). 1.0.5 (07-04-2020) - Added dependencies for Amazon VOD addon.</news> 
+      <news>1.0.1 (24-03-2020) - Added the Polish TV addons, namely TVP.pl (by mbebe), WP Pilot and TVP SPORT (by cod34fun). 1.0.2 (24-03-2020) - Added the Italian TV addons, namely Rai Play (by Nightflyer, cttynul, maxbambi, fabpolli) and Mediaset Play (by kodi-bino, cttynul). 1.0.3 (24-03-2020) - Added the YouTube addon (by anxdpanic, bromix). 1.0.4 (06-04-2020) - Added the Amazon VOD addon (by Sandmann79, Varstahl). 1.0.5 (07-04-2020) - Added dependencies for Amazon VOD addon. 1.0.6 (07-04-2020) - Changed version of Kodi-Six (down to 0.0.5) and TVP SPORT (up to 0.0.11).</news> 
     </extension> 
   </addon>
   <addon id="script.module.cloudscraper" name="cloudscraper" version="1.2.26" provider-name="VeNoMouS (venom@gen-x.co.nz)"> 
@@ -412,14 +412,14 @@
       <news>09/03/2020 - Bugfix by ostvanc in version 6.03.0: removed local library "pyjsparser" due to parsing errors</news> 
     </extension> 
   </addon>
-  <addon id="script.module.kodi-six" name="Kodi Six" version="0.1.3.1" provider-name="Roman V.M."> 
+  <addon id="script.module.kodi-six" name="Kodi Six" version="0.0.5" provider-name="Roman V.M."> 
     <requires> 
-      <import addon="xbmc.python" version="3.0.0"/> 
+      <import addon="xbmc.python" version="2.14.0"/> 
     </requires>  
     <extension point="xbmc.python.module" library="libs"/>  
     <extension point="xbmc.addon.metadata"> 
-      <summary lang="en_GB">Wrappers around Kodi Python API for seamless Python 2/3 compatibility</summary>  
-      <description lang="en_GB">Wrappers around Kodi Python API that normalize handling of textual and byte strings in Python 2 and 3.</description>  
+      <summary lang="en">Wrappers around Kodi Python API for seamless Python 2/3 compatibility</summary>  
+      <description lang="en">Wrappers around Kodi Python API that normalize handling of textual and byte strings in Python 2 and 3.</description>  
       <platform>all</platform>  
       <license>GPL v.3</license>  
       <forum>https://forum.kodi.tv/showthread.php?tid=327883</forum>  
@@ -427,7 +427,7 @@
       <assets> 
         <icon>icon.png</icon> 
       </assets>  
-      <news>0.1.3: - Fix non-UTF-8 byte string decoding in Python 2.</news> 
+      <news>0.0.5: - Fixed Unicode decode errors when Kodi API returns non-UTF-8 byte strings. 0.0.4: - Implemented lazy patching of Kodi API functions and classes.</news> 
     </extension> 
   </addon>
   <addon id="script.module.mechanicalsoup" name="MechanicalSoup" version="0.12.0" provider-name="Matthew Hickford, Dan Hemberger, Matthieu Moy"> 
