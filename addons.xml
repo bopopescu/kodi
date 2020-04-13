@@ -93,7 +93,8 @@
         <icon>icon.png</icon>  
         <fanart>fanart.jpg</fanart>  
         <screenshot>resources\screenshot000.jpg</screenshot>  
-        <screenshot>resources\screenshot001.jpg</screenshot> 
+        <screenshot>resources\screenshot001.jpg</screenshot>  
+        <screenshot>resources\screenshot002.jpg</screenshot> 
       </assets>  
       <news>0.0.1 - 12/02/2020 - Initial version 0.0.2 - 13/04/2020 - refactored screenshot directory</news> 
     </extension> 
@@ -396,7 +397,7 @@
     </extension>  
     <extension point="xbmc.addon.metadata"> 
       <summary lang="en">ostvanc addon repository</summary>  
-      <description lang="en">A Kodi addon repository including 4Anime.to, Bild.de and Telewizja Republika</description>  
+      <description lang="en">A Kodi addon repository including 4Anime.to, Bild.de, Focus Online and Telewizja Republika</description>  
       <platform>all</platform>  
       <news>1.0.1 (24-03-2020) - Added the Polish TV addons, namely TVP.pl (by mbebe), WP Pilot and TVP SPORT (by cod34fun). 1.0.2 (24-03-2020) - Added the Italian TV addons, namely Rai Play (by Nightflyer, cttynul, maxbambi, fabpolli) and Mediaset Play (by kodi-bino, cttynul). 1.0.3 (24-03-2020) - Added the YouTube addon (by anxdpanic, bromix). 1.0.4 (06-04-2020) - Added the Amazon VOD addon (by Sandmann79, Varstahl). 1.0.5 (07-04-2020) - Added dependencies for Amazon VOD addon. 1.0.6 (07-04-2020) - Changed version of Kodi-Six (down to 0.0.5) and TVP SPORT (up to 0.0.11). 1.0.7 (07-04-2020) - Added the MediathekView addon (by MediathekView.de, Leo Moll) 1.0.8 (13-04-2020) - Added the Focus Online addon</news> 
     </extension> 
