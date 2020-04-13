@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="plugin.video.focus"
+version="0.0.2"
+name="Focus Online"
+provider-name="ostvanc">
+<requires>
+  <import addon="xbmc.python" version="2.25.0"/>
+  <import addon="script.module.beautifulsoup4" version="4.5.3"/>
+</requires>
+<extension point="xbmc.python.pluginsource" library="main.py">
+  <provides>video</provides>
+</extension>
+<extension point="xbmc.addon.metadata">
+  <summary lang="en">Focus Online Video Addon</summary>
+  <description lang="en_GB">Kodi video plugin for the website Focus.de</description>
+  <website>https://www.focus.de/videos/</website>
+  <assets>
+    <icon>icon.png</icon>
+    <fanart>fanart.jpg</fanart>
+	<screenshot>resources\screenshot000.jpg</screenshot>
+    <screenshot>resources\screenshot001.jpg</screenshot>
+  </assets>
+  <news>
+	0.0.1 - 12/02/2020 - Initial version
+	0.0.2 - 13/04/2020 - refactored screenshot directory
+  </news>
+</extension>
+</addon>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <addons>
-  <addon id="plugin.video.4anime" version="0.3.0" name="4Anime.to" provider-name="ostvanc"> 
+  <addon id="plugin.video.4anime" version="0.3.1" name="4Anime.to" provider-name="ostvanc"> 
     <requires> 
       <import addon="xbmc.python" version="2.25.0"/>  
       <import addon="script.module.beautifulsoup4" version="4.5.3"/>  
@@ -19,11 +19,11 @@
       <assets> 
         <icon>icon.png</icon>  
         <fanart>fanart.jpg</fanart>  
-        <screenshot>resources\screenshots\screenshot-01.jpg</screenshot>  
-        <screenshot>resources\screenshots\screenshot-02.jpg</screenshot>  
-        <screenshot>resources\screenshots\screenshot-03.jpg</screenshot> 
+        <screenshot>resources\screenshot-01.jpg</screenshot>  
+        <screenshot>resources\screenshot-02.jpg</screenshot>  
+        <screenshot>resources\screenshot-03.jpg</screenshot> 
       </assets>  
-      <news>0.0.1 - 01/12/2019 - Initial version - added random tv show 0.0.2 - 03/12/2019 - added search tv show 0.1.0 - 04/12/2019 - added Cloudflare protection bypass 0.2.0 - 08/03/2020 - added JavaScript evaluation 0.3.0 - 18/03/2020 - added search by genre</news> 
+      <news>0.0.1 - 01/12/2019 - Initial version - added random tv show 0.0.2 - 03/12/2019 - added search tv show 0.1.0 - 04/12/2019 - added Cloudflare protection bypass 0.2.0 - 08/03/2020 - added JavaScript evaluation 0.3.0 - 18/03/2020 - added search by genre 0.3.1 - 13/04/2020 - refactored screenshot directory</news> 
     </extension> 
   </addon>
   <addon id="plugin.video.amazon-test" name="Amazon VOD" version="0.8.2" provider-name="Sandmann79, Varstahl"> 
@@ -55,7 +55,7 @@
       <source>https://github.com/Sandmann79/xbmc</source> 
     </extension> 
   </addon>
-  <addon id="plugin.video.bild" version="0.3.0" name="Bild.de" provider-name="ostvanc"> 
+  <addon id="plugin.video.bild" version="0.3.1" name="Bild.de" provider-name="ostvanc"> 
     <requires> 
       <import addon="xbmc.python" version="2.25.0"/>  
       <import addon="script.module.beautifulsoup4" version="4.5.3"/> 
@@ -70,11 +70,32 @@
       <assets> 
         <icon>icon.png</icon>  
         <fanart>fanart.jpg</fanart>  
-        <screenshot>resources\screenshot000.png</screenshot>  
-        <screenshot>resources\screenshot001.png</screenshot>  
-        <screenshot>resources\screenshot002.png</screenshot> 
+        <screenshot>resources\screenshot000.jpg</screenshot>  
+        <screenshot>resources\screenshot001.jpg</screenshot>  
+        <screenshot>resources\screenshot002.jpg</screenshot> 
       </assets>  
-      <news>0.1.0 - 12/02/2020 - Initial version 0.2.0 - 06/03/2020 - Fixed due to changes 0.3.0 - 09/03/2020 - Added Livestream</news> 
+      <news>0.1.0 - 12/02/2020 - Initial version 0.2.0 - 06/03/2020 - Fixed due to changes 0.3.0 - 09/03/2020 - Added Livestream 0.3.1 - 13/04/2020 - Refactored Screenshot Directory</news> 
+    </extension> 
+  </addon>
+  <addon id="plugin.video.focus" version="0.0.2" name="Focus Online" provider-name="ostvanc"> 
+    <requires> 
+      <import addon="xbmc.python" version="2.25.0"/>  
+      <import addon="script.module.beautifulsoup4" version="4.5.3"/> 
+    </requires>  
+    <extension point="xbmc.python.pluginsource" library="main.py"> 
+      <provides>video</provides> 
+    </extension>  
+    <extension point="xbmc.addon.metadata"> 
+      <summary lang="en">Focus Online Video Addon</summary>  
+      <description lang="en_GB">Kodi video plugin for the website Focus.de</description>  
+      <website>https://www.focus.de/videos/</website>  
+      <assets> 
+        <icon>icon.png</icon>  
+        <fanart>fanart.jpg</fanart>  
+        <screenshot>resources\screenshot000.jpg</screenshot>  
+        <screenshot>resources\screenshot001.jpg</screenshot> 
+      </assets>  
+      <news>0.0.1 - 12/02/2020 - Initial version 0.0.2 - 13/04/2020 - refactored screenshot directory</news> 
     </extension> 
   </addon>
   <addon id="plugin.video.mediasetplay" name="Mediaset Play" version="1.2.2" provider-name="kodi-bino, cttynul"> 
@@ -367,7 +388,7 @@
       <reuselanguageinvoker>true</reuselanguageinvoker> 
     </extension> 
   </addon>
-  <addon id="repository.ostvanc" name="ostvanc addon repository" version="1.0.7" provider-name="ostvanc"> 
+  <addon id="repository.ostvanc" name="ostvanc addon repository" version="1.0.8" provider-name="ostvanc"> 
     <extension point="xbmc.addon.repository" name="ostvanc Repository"> 
       <info compressed="false">https://github.com/ostvanc/kodi/raw/master/addons.xml</info>  
       <checksum>https://github.com/ostvanc/kodi/raw/master/addons.xml.md5</checksum>  
@@ -377,7 +398,7 @@
       <summary lang="en">ostvanc addon repository</summary>  
       <description lang="en">A Kodi addon repository including 4Anime.to, Bild.de and Telewizja Republika</description>  
       <platform>all</platform>  
-      <news>1.0.1 (24-03-2020) - Added the Polish TV addons, namely TVP.pl (by mbebe), WP Pilot and TVP SPORT (by cod34fun). 1.0.2 (24-03-2020) - Added the Italian TV addons, namely Rai Play (by Nightflyer, cttynul, maxbambi, fabpolli) and Mediaset Play (by kodi-bino, cttynul). 1.0.3 (24-03-2020) - Added the YouTube addon (by anxdpanic, bromix). 1.0.4 (06-04-2020) - Added the Amazon VOD addon (by Sandmann79, Varstahl). 1.0.5 (07-04-2020) - Added dependencies for Amazon VOD addon. 1.0.6 (07-04-2020) - Changed version of Kodi-Six (down to 0.0.5) and TVP SPORT (up to 0.0.11). 1.0.7 (07-04-2020) - Added the MediathekView addon (by MediathekView.de, Leo Moll)</news> 
+      <news>1.0.1 (24-03-2020) - Added the Polish TV addons, namely TVP.pl (by mbebe), WP Pilot and TVP SPORT (by cod34fun). 1.0.2 (24-03-2020) - Added the Italian TV addons, namely Rai Play (by Nightflyer, cttynul, maxbambi, fabpolli) and Mediaset Play (by kodi-bino, cttynul). 1.0.3 (24-03-2020) - Added the YouTube addon (by anxdpanic, bromix). 1.0.4 (06-04-2020) - Added the Amazon VOD addon (by Sandmann79, Varstahl). 1.0.5 (07-04-2020) - Added dependencies for Amazon VOD addon. 1.0.6 (07-04-2020) - Changed version of Kodi-Six (down to 0.0.5) and TVP SPORT (up to 0.0.11). 1.0.7 (07-04-2020) - Added the MediathekView addon (by MediathekView.de, Leo Moll) 1.0.8 (13-04-2020) - Added the Focus Online addon</news> 
     </extension> 
   </addon>
   <addon id="script.module.cloudscraper" name="cloudscraper" version="1.2.26" provider-name="VeNoMouS (venom@gen-x.co.nz)"> 

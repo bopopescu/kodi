@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon id="plugin.video.4anime"
-version="0.3.0"
+version="0.3.1"
 name="4Anime.to"
 provider-name="ostvanc">
 <requires>
@@ -20,9 +20,9 @@ provider-name="ostvanc">
   <assets>
     <icon>icon.png</icon>
     <fanart>fanart.jpg</fanart>
-    <screenshot>resources\screenshots\screenshot-01.jpg</screenshot>
-	<screenshot>resources\screenshots\screenshot-02.jpg</screenshot>
-	<screenshot>resources\screenshots\screenshot-03.jpg</screenshot>
+    <screenshot>resources\screenshot-01.jpg</screenshot>
+	<screenshot>resources\screenshot-02.jpg</screenshot>
+	<screenshot>resources\screenshot-03.jpg</screenshot>
   </assets>
   <news>
 	0.0.1 - 01/12/2019 - Initial version - added random tv show
@@ -30,6 +30,7 @@ provider-name="ostvanc">
 	0.1.0 - 04/12/2019 - added Cloudflare protection bypass
 	0.2.0 - 08/03/2020 - added JavaScript evaluation
 	0.3.0 - 18/03/2020 - added search by genre
+	0.3.1 - 13/04/2020 - refactored screenshot directory
   </news>
 </extension>
 </addon>
