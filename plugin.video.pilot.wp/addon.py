@@ -21,9 +21,9 @@ video_url = 'https://pilot.wp.pl/api/v1/channel/'
 close_stream_url = 'https://pilot.wp.pl/api/v1/channels/close'
 
 headers = {
-    'user-agent': 'ExoMedia 4.3.0 (43000) / Android 8.0.0 / MIBOX3',
+    'user-agent': 'ExoMedia 4.3.0 (43000) / Android 8.0.0 / foster_e',
     'accept': 'application/json',
-    'x-version': 'pl.videostar|3.25.0|Android|26|MIBOX3',
+    'x-version': 'pl.videostar|3.25.0|Android|26|foster_e',
     'content-type': 'application/json; charset=UTF-8'
 }
 
@@ -99,7 +99,7 @@ def cookiesToString(cookies):
 
 def login():
     if len(password) > 0 and len(username) > 0:
-        data = {'device': 'android', 'login': username, 'password': password}
+        data = {'device': 'AndroidTV', 'login': username, 'password': password}
 
         response = requests.post(
             login_url,

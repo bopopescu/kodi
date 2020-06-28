@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<addon id="plugin.video.pilot.wp" name="WP Pilot" version="0.1.2" provider-name="c0d34fun">
+<addon id="plugin.video.pilot.wp" name="WP Pilot" version="0.1.3" provider-name="c0d34fun">
     <requires>
         <import addon="xbmc.python" version="2.25.0"/>
         <import addon="script.module.requests" version="2.12.4"/>

@@ -1,5 +1,4 @@
 import logging
-import os
 import re
 import sys
 import ssl
@@ -25,6 +24,15 @@ from collections import OrderedDict
 from requests.sessions import Session
 from requests.adapters import HTTPAdapter
 
+from .exceptions import (
+    CloudflareLoopProtection,
+    CloudflareCode1020,
+    CloudflareIUAMError,
+    CloudflareChallengeError,
+    CloudflareReCaptchaError,
+    CloudflareReCaptchaProvider
+)
+
 from .interpreters import JavaScriptInterpreter
 from .reCaptcha import reCaptcha
 from .user_agent import User_Agent
@@ -44,13 +52,10 @@ try:
 except ImportError:
     from urllib.parse import urlparse, urljoin
 
-# Add exceptions path
-sys.path.append(os.path.join(os.path.dirname(__file__), 'exceptions'))
-import cloudflare_exceptions  # noqa: E402
 
 # ------------------------------------------------------------------------------- #
 
-__version__ = '1.2.26'
+__version__ = '1.2.36'
 
 # ------------------------------------------------------------------------------- #
 
@@ -73,7 +78,7 @@ class CipherSuiteAdapter(HTTPAdapter):
         if not self.ssl_context:
             self.ssl_context = ssl.create_default_context(ssl.Purpose.SERVER_AUTH)
             self.ssl_context.set_ciphers(self.cipherSuite)
-            self.ssl_context.set_alpn_protocols(['http/1.1'])
+            self.ssl_context.set_ecdh_curve('prime256v1')
             self.ssl_context.options |= (ssl.OP_NO_SSLv2 | ssl.OP_NO_SSLv3 | ssl.OP_NO_TLSv1 | ssl.OP_NO_TLSv1_1)
 
         super(CipherSuiteAdapter, self).__init__(**kwargs)
@@ -99,6 +104,7 @@ class CloudScraper(Session):
         self.debug = kwargs.pop('debug', False)
         self.delay = kwargs.pop('delay', None)
         self.cipherSuite = kwargs.pop('cipherSuite', None)
+        self.ssl_context = kwargs.pop('ssl_context', None)
         self.interpreter = kwargs.pop('interpreter', 'native')
         self.recaptcha = kwargs.pop('recaptcha', {})
         self.allow_brotli = kwargs.pop(
@@ -131,7 +137,8 @@ class CloudScraper(Session):
         self.mount(
             'https://',
             CipherSuiteAdapter(
-                cipherSuite=self.cipherSuite
+                cipherSuite=self.cipherSuite,
+                ssl_context=self.ssl_context
             )
         )
 
@@ -144,6 +151,15 @@ class CloudScraper(Session):
 
     def __getstate__(self):
         return self.__dict__
+
+    # ------------------------------------------------------------------------------- #
+    # Raise an Exception with no stacktrace and reset depth counter.
+    # ------------------------------------------------------------------------------- #
+
+    def simpleException(self, exception, msg):
+        self._solveDepthCnt = 0
+        sys.tracebacklimit = 0
+        raise exception(msg)
 
     # ------------------------------------------------------------------------------- #
     # debug the request via the response
@@ -215,10 +231,9 @@ class CloudScraper(Session):
             # ------------------------------------------------------------------------------- #
 
             if self._solveDepthCnt >= self.solveDepth:
-                sys.tracebacklimit = 0
                 _ = self._solveDepthCnt
-                self._solveDepthCnt = 0
-                raise cloudflare_exceptions.Cloudflare_Loop_Protection(
+                self.simpleException(
+                    CloudflareLoopProtection,
                     "!!Loop Protection!! We have tried to solve {} time(s) in a row.".format(_)
                 )
 
@@ -242,7 +257,28 @@ class CloudScraper(Session):
                 resp.headers.get('Server', '').startswith('cloudflare')
                 and resp.status_code in [429, 503]
                 and re.search(
-                    r'action="/.*?__cf_chl_jschl_tk__=\S+".*?name="jschl_vc"\svalue=.*?',
+                    r'<form .*?="challenge-form" action="/.*?__cf_chl_jschl_tk__=\S+"',
+                    resp.text,
+                    re.M | re.DOTALL
+                )
+            )
+        except AttributeError:
+            pass
+
+        return False
+
+    # ------------------------------------------------------------------------------- #
+    # check if the response contains new Cloudflare challenge
+    # ------------------------------------------------------------------------------- #
+
+    @staticmethod
+    def is_New_IUAM_Challenge(resp):
+        try:
+            return (
+                resp.headers.get('Server', '').startswith('cloudflare')
+                and resp.status_code in [429, 503]
+                and re.search(
+                    r'cpo.src="/cdn-cgi/challenge-platform/orchestrate/jsch/v1"',
                     resp.text,
                     re.M | re.DOTALL
                 )
@@ -300,10 +336,20 @@ class CloudScraper(Session):
 
     def is_Challenge_Request(self, resp):
         if self.is_Firewall_Blocked(resp):
-            sys.tracebacklimit = 0
-            raise cloudflare_exceptions.Cloudflare_Block('Cloudflare has blocked this request (Code 1020 Detected).')
+            self.simpleException(
+                CloudflareCode1020,
+                'Cloudflare has blocked this request (Code 1020 Detected).'
+            )
+
+        if self.is_New_IUAM_Challenge(resp):
+            self.simpleException(
+                CloudflareChallengeError,
+                'Detected the new Cloudflare challenge.'
+            )
 
         if self.is_reCaptcha_Challenge(resp) or self.is_IUAM_Challenge(resp):
+            if self.debug:
+                print('Detected Challenge.')
             return True
 
         return False
@@ -314,16 +360,29 @@ class CloudScraper(Session):
 
     def IUAM_Challenge_Response(self, body, url, interpreter):
         try:
-            challengeUUID = re.search(
-                r'id="challenge-form" action="(?P<challengeUUID>\S+)"',
-                body, re.M | re.DOTALL
-            ).groupdict().get('challengeUUID', '')
+            formPayload = re.search(
+                r'<form (?P<form>.*?="challenge-form" '
+                r'action="(?P<challengeUUID>.*?'
+                r'__cf_chl_jschl_tk__=\S+)"(.*?)</form>)',
+                body,
+                re.M | re.DOTALL
+            ).groupdict()
 
-            payload = OrderedDict(re.findall(r'name="(r|jschl_vc|pass)"\svalue="(.*?)"', body))
+            if not all(key in formPayload for key in ['form', 'challengeUUID']):
+                self.simpleException(
+                    CloudflareIUAMError,
+                    "Cloudflare IUAM detected, unfortunately we can't extract the parameters correctly."
+                )
+
+            payload = OrderedDict()
+            for challengeParam in re.findall(r'<input\s(.*?)>', formPayload['form']):
+                inputPayload = dict(re.findall(r'(\S+)="(\S+)"', challengeParam))
+                if inputPayload.get('name') in ['r', 'jschl_vc', 'pass']:
+                    payload.update({inputPayload['name']: inputPayload['value']})
 
         except AttributeError:
-            sys.tracebacklimit = 0
-            raise cloudflare_exceptions.Cloudflare_Error_IUAM(
+            self.simpleException(
+                CloudflareIUAMError,
                 "Cloudflare IUAM detected, unfortunately we can't extract the parameters correctly."
             )
 
@@ -334,7 +393,8 @@ class CloudScraper(Session):
                 interpreter
             ).solveChallenge(body, hostParsed.netloc)
         except Exception as e:
-            raise cloudflare_exceptions.Cloudflare_Error_IUAM(
+            self.simpleException(
+                CloudflareIUAMError,
                 'Unable to parse Cloudflare anti-bots page: {}'.format(
                     getattr(e, 'message', e)
                 )
@@ -344,7 +404,7 @@ class CloudScraper(Session):
             'url': '{}://{}{}'.format(
                 hostParsed.scheme,
                 hostParsed.netloc,
-                self.unescape(challengeUUID)
+                self.unescape(formPayload['challengeUUID'])
             ),
             'data': payload
         }
@@ -355,34 +415,62 @@ class CloudScraper(Session):
 
     def reCaptcha_Challenge_Response(self, provider, provider_params, body, url):
         try:
-            payload = re.search(
-                r'(name="r"\svalue="(?P<r>\S+)"|).*?challenge-form" action="(?P<challengeUUID>\S+)".*?'
-                r'data-ray="(?P<data_ray>\S+)".*?data-sitekey="(?P<site_key>\S+)"',
-                body, re.M | re.DOTALL
+            formPayload = re.search(
+                r'<form (?P<form>.*?="challenge-form" '
+                r'action="(?P<challengeUUID>.*?__cf_chl_captcha_tk__=\S+)"(.*?)</form>)',
+                body,
+                re.M | re.DOTALL
             ).groupdict()
-        except (AttributeError):
-            sys.tracebacklimit = 0
-            raise cloudflare_exceptions.Cloudflare_Error_reCaptcha(
+
+            if not all(key in formPayload for key in ['form', 'challengeUUID']):
+                self.simpleException(
+                    CloudflareReCaptchaError,
+                    "Cloudflare reCaptcha detected, unfortunately we can't extract the parameters correctly."
+                )
+
+            payload = OrderedDict(
+                re.findall(
+                    r'(name="r"\svalue|data-ray|data-sitekey|name="cf_captcha_kind"\svalue)="(.*?)"',
+                    formPayload['form']
+                )
+            )
+
+            captchaType = 'reCaptcha' if payload['name="cf_captcha_kind" value'] == 're' else 'hCaptcha'
+
+        except (AttributeError, KeyError):
+            self.simpleException(
+                CloudflareReCaptchaError,
                 "Cloudflare reCaptcha detected, unfortunately we can't extract the parameters correctly."
             )
 
+        captchaResponse = reCaptcha.dynamicImport(
+            provider.lower()
+        ).solveCaptcha(
+            captchaType,
+            url,
+            payload['data-sitekey'],
+            provider_params
+        )
+
+        dataPayload = OrderedDict([
+            ('r', payload.get('name="r" value', '')),
+            ('cf_captcha_kind', payload['name="cf_captcha_kind" value']),
+            ('id', payload.get('data-ray')),
+            ('g-recaptcha-response', captchaResponse)
+        ])
+
+        if captchaType == 'hCaptcha':
+            dataPayload.update({'h-captcha-response': captchaResponse})
+
         hostParsed = urlparse(url)
+
         return {
             'url': '{}://{}{}'.format(
                 hostParsed.scheme,
                 hostParsed.netloc,
-                self.unescape(payload.get('challengeUUID', ''))
+                self.unescape(formPayload['challengeUUID'])
             ),
-            'data': OrderedDict([
-                ('r', payload.get('r', '')),
-                ('id', payload.get('data_ray')),
-                (
-                    'g-recaptcha-response',
-                    reCaptcha.dynamicImport(
-                        provider.lower()
-                    ).solveCaptcha(url, payload.get('site_key'), provider_params)
-                )
-            ])
+            'data': dataPayload
         }
 
     # ------------------------------------------------------------------------------- #
@@ -408,8 +496,8 @@ class CloudScraper(Session):
             # ------------------------------------------------------------------------------- #
 
             if not self.recaptcha or not isinstance(self.recaptcha, dict) or not self.recaptcha.get('provider'):
-                sys.tracebacklimit = 0
-                raise cloudflare_exceptions.Cloudflare_reCaptcha_Provider(
+                self.simpleException(
+                    CloudflareReCaptchaProvider,
                     "Cloudflare reCaptcha detected, unfortunately you haven't loaded an anti reCaptcha provider "
                     "correctly via the 'recaptcha' parameter."
                 )
@@ -444,8 +532,10 @@ class CloudScraper(Session):
                     if isinstance(delay, (int, float)):
                         self.delay = delay
                 except (AttributeError, ValueError):
-                    sys.tracebacklimit = 0
-                    raise cloudflare_exceptions.Cloudflare_Error_IUAM("Cloudflare IUAM possibility malformed, issue extracing delay value.")
+                    self.simpleException(
+                        CloudflareIUAMError,
+                        "Cloudflare IUAM possibility malformed, issue extracing delay value."
+                    )
 
             sleep(self.delay)
 
@@ -503,6 +593,7 @@ class CloudScraper(Session):
 
             if not challengeSubmitResponse.is_redirect:
                 return challengeSubmitResponse
+
             else:
                 cloudflare_kwargs = deepcopy(kwargs)
                 cloudflare_kwargs['headers'] = updateAttr(
@@ -531,6 +622,7 @@ class CloudScraper(Session):
         # ------------------------------------------------------------------------------- #
 
         return self.request(resp.request.method, resp.url, **kwargs)
+
     # ------------------------------------------------------------------------------- #
 
     @classmethod
@@ -583,8 +675,8 @@ class CloudScraper(Session):
                 cookie_domain = d
                 break
         else:
-            sys.tracebacklimit = 0
-            raise cloudflare_exceptions.Cloudflare_Error_IUAM(
+            cls.simpleException(
+                CloudflareIUAMError,
                 "Unable to find Cloudflare cookies. Does the site actually "
                 "have Cloudflare IUAM (I'm Under Attack Mode) enabled?"
             )
