@@ -49,5 +49,5 @@ class SessionThread(object):
         return self._worker.is_alive()
 
     def join(self):
-        """Join this thread to the master thread."""
+        """Join this thread to the main thread."""
         self._worker.join()

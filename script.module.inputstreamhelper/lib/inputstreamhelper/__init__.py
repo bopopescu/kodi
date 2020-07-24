@@ -86,7 +86,7 @@ class Helper:
     def _temp_path(cls):
         """Return temporary path, usually ~/.kodi/userdata/addon_data/script.module.inputstreamhelper/temp"""
         from xbmcvfs import exists, mkdirs
-        temp_path = translate_path(os.path.join(get_setting('temp_path', 'special://masterprofile/addon_data/script.module.inputstreamhelper'), 'temp'))
+        temp_path = translate_path(os.path.join(get_setting('temp_path', 'special://mainprofile/addon_data/script.module.inputstreamhelper'), 'temp'))
         if not exists(temp_path):
             mkdirs(temp_path)
 

@@ -142,7 +142,7 @@ class Pool(object):
             yield resp
 
     def join_all(self):
-        """Join all the threads to the master thread."""
+        """Join all the threads to the main thread."""
         for session_thread in self._pool:
             session_thread.join()
 

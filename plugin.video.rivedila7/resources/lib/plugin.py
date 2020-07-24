@@ -169,7 +169,7 @@ def play_video(page_video,live):
     else:
         if re.findall(regex2, html):
             #xbmc.log('REGEX2-----: '+str(re.findall(regex2, html)),xbmc.LOGNOTICE)
-            link_video = 'https://awsvodpkg.iltrovatore.it/local/hls/,/content/'+re.findall(regex2, html)[0]+'.mp4.urlset/master.m3u8'
+            link_video = 'https://awsvodpkg.iltrovatore.it/local/hls/,/content/'+re.findall(regex2, html)[0]+'.mp4.urlset/main.m3u8'
             #xbmc.log('LINK2-----: '+str(link_video),xbmc.LOGNOTICE)
         elif re.findall(regex3, html):
             #xbmc.log('REGEX3-----: '+str(re.findall(regex3, html)),xbmc.LOGNOTICE)
